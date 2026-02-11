@@ -6,7 +6,6 @@ export function Name() {
         <br />
         Notargiacomo
       </h1>
-      <p id="description"></p>
     </>
   );
 }

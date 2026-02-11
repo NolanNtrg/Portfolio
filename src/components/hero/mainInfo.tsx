@@ -5,11 +5,11 @@ import { Tag } from "./tag";
 
 export function MainInfo() {
   return (
-    <>
+    <div className="flex flex-col items-center">
       <Tag />
       <Name />
       <Description />
       <HeroButtons />
-    </>
+    </div>
   );
 }
