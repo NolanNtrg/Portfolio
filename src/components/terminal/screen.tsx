@@ -1,7 +1,196 @@
+import { useState, useEffect, useRef } from "react";
+
+// --- CONFIG & DATA ---
+const style = {
+  comment: (txt: string) => `<span class="italic text-gray-500">${txt}</span>`,
+  ok: (txt: string) => `[ <span class="text-green-400">OK</span> ] ${txt}`,
+  high: (txt: string) =>
+    `<span class="bg-green-400/15 px-1 text-white rounded-sm">${txt}</span>`,
+};
+
+const scenario = [
+  style.comment("# Booting system..."),
+  style.ok("Noyau chargé."),
+  style.ok("Réseau connecté."),
+  "<br>",
+  `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">whoami</span>`,
+  "> Nolan Notargiacomo",
+  "> Étudiant IUT2 Grenoble",
+  "<br>",
+  `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">cat skills.txt</span>`,
+  "Frontend: React, Vue.js, Flutter",
+  "Backend: Node.js, Python, Java",
+  "DevOps: Docker, Git",
+  "<br>",
+  `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">./start_ui.sh</span>`,
+  style.high("Chargement de l'interface..."),
+  "████████████████ 100%",
+];
+
+const projectsData = {
+  "1": {
+    title: "DataFlow Analytics",
+    stack: ["React", "Node.js"],
+    description:
+      "Plateforme d'analyse de données temps réel. Dashboard interactif et reporting automatisé.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  },
+  "2": {
+    title: "SecureChat Pro",
+    stack: ["Flutter", "Firebase"],
+    description:
+      "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
+    image:
+      "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+  },
+  "3": {
+    title: "SecureChat Pro",
+    stack: ["Flutter", "Firebase"],
+    description:
+      "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
+    image:
+      "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+  },
+  "4": {
+    title: "SecureChat Pro",
+    stack: ["Flutter", "Firebase"],
+    description:
+      "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
+    image:
+      "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+  },
+  "5": {
+    title: "SecureChat Pro",
+    stack: ["Flutter", "Firebase"],
+    description:
+      "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
+    image:
+      "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+  },
+};
+
+// --- MAIN SCREEN COMPONENT ---
 export function Screen() {
+  const [progress, setProgress] = useState(0);
+  const [visibleLines, setVisibleLines] = useState(0);
+  const [projectsVisible, setProjectsVisible] = useState(false);
+  const [minutes, setMinutes] = useState(0);
+
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!trackRef.current) return;
+      const rect = trackRef.current.getBoundingClientRect();
+      const scrollableHeight = rect.height - window.innerHeight;
+      const scrolled = -rect.top;
+      const newProgress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
+
+      setProgress(newProgress);
+      setProjectsVisible(newProgress > 0.99);
+
+      const stepSize = 1 / (scenario.length + 2);
+      setVisibleLines(Math.floor(newProgress / stepSize));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => setMinutes((m) => m + 1), 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="absolute left-0 top-full h-full w-full flex justify-center items-center">
-      <div className="bg-black w-[95%] h-[95%] rounded-3xl"></div>
-    </div>
+    <main ref={trackRef} className="h-[450vh] relative">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="w-screen h-screen bg-[#1a1a1a] shadow-2xl flex flex-col border-[#333] transition-all duration-300 md:w-[95vw] md:h-[90vh] md:rounded-lg md:p-3 md:border">
+          <div className="grow rounded-sm relative font-mono text-green-400 pt-2 leading-relaxed shadow-inner flex flex-col bg-[#0c0c0c]">
+            {/* Overlay Scanline Effect */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-size-[100%_4px] z-10 pointer-events-none"></div>
+
+            {/* Header */}
+            <header className="border-b border-gray-700 pb-2.5 mb-4 text-gray-500 text-xs shrink-0 flex justify-between">
+              <span className="ml-3">TTY1: /dev/pts/0</span>
+              <span className="mr-3">UPTIME: {minutes} min</span>
+            </header>
+
+            {/* Terminal Content */}
+            <div
+              className={`grow overflow-hidden relative text-xs sm:text-sm md:text-base transition-opacity duration-500 text-left pl-4 ${projectsVisible ? "opacity-0" : "opacity-100"}`}
+            >
+              {scenario.map((line, i) => (
+                <div
+                  key={i}
+                  className={`transition-all duration-200 mb-2 ${i < visibleLines ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+                  dangerouslySetInnerHTML={{ __html: line }}
+                />
+              ))}
+            </div>
+
+            {/* Projects Content */}
+            <section
+              className={`absolute inset-0 overflow-y-auto z-20 transition-opacity duration-700 p-2 sm:p-5 bg-black/95 ${projectsVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+            >
+              <header className="text-center my-4 md:my-10">
+                <h2
+                  className="text-3xl md:text-5xl text-white mb-2.5"
+                  style={{ textShadow: "0 0 15px rgba(0, 255, 65, 0.4)" }}
+                >
+                  📁 MES PROJETS
+                </h2>
+                <p className="text-gray-400 font-mono">
+                  Projets réalisés en milieu académique et personnel
+                </p>
+              </header>
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 px-2.5 pb-16 max-w-6xl mx-auto">
+                {Object.values(projectsData).map((project) => (
+                  <div
+                    key={project.title}
+                    className="group bg-gray-900/70 border border-gray-700 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:border-green-400 hover:shadow-2xl hover:shadow-green-500/10"
+                  >
+                    <div className="h-52 overflow-hidden relative">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-white text-xl mb-2">
+                        {project.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {project.stack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="inline-block text-xs px-2 py-1 bg-gray-700/50 rounded-md text-gray-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-sm text-gray-400 line-clamp-3">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-[#111] text-gray-500 px-4 py-2 text-xs flex justify-between border-t border-gray-700 z-30 mt-auto font-mono">
+              <span>
+                STATUS: <span className="text-green-400">CONNECTED</span>
+              </span>
+              <span>BUFFER: {Math.round(progress * 100)}%</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

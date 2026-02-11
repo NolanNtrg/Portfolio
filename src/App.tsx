@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Hero />
-      <Screen />
+      <div className="absolute top-full left-0 flex items-center justify-center w-screen">
+        <Screen />
+      </div>
     </>
   );
 }
