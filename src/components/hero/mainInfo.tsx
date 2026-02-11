@@ -1,3 +1,4 @@
+import { Description } from "./description";
 import { HeroButtons } from "./heroButtons";
 import { Name } from "./name";
 import { Tag } from "./tag";
@@ -7,6 +8,7 @@ export function MainInfo() {
     <>
       <Tag />
       <Name />
+      <Description />
       <HeroButtons />
     </>
   );
