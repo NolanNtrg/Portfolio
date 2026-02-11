@@ -1,3 +1,4 @@
+import { CallToAction } from "./calltoaction";
 import { Description } from "./description";
 import { HeroButtons } from "./heroButtons";
 import { Name } from "./name";
@@ -10,6 +11,7 @@ export function MainInfo() {
       <Name />
       <Description />
       <HeroButtons />
+      <CallToAction />
     </div>
   );
 }

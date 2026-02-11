@@ -88,7 +88,7 @@ export function Screen() {
       const newProgress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
 
       setProgress(newProgress);
-      setProjectsVisible(newProgress > 0.99);
+      setProjectsVisible(newProgress > 0.85);
 
       const stepSize = 1 / (scenario.length + 2);
       setVisibleLines(Math.floor(newProgress / stepSize));
