@@ -1,12 +1,24 @@
+import { Button } from "../button";
+
 export function Mail() {
   return (
-    <section id="contact" className="contact-section">
-      <div className="contact-container">
-        <div className="contact-header">
-          <h2 data-fr="Me Contacter" data-en="Get In Touch">
+    <section
+      id="contact"
+      className="relative z-10 py-20 px-5 bg-(--section-bg) text-white"
+    >
+      {/* Container : j'ai mis max-w-2xl pour que ce soit responsive (mieux que 50vw sur mobile) */}
+      <div className="w-full max-w-2xl mx-auto text-center">
+        {/* Header */}
+        <div className="mb-10">
+          <h2
+            className="text-4xl mb-3 text-(--term-text) font-bold"
+            data-fr="Me Contacter"
+            data-en="Get In Touch"
+          >
             Me Contacter
           </h2>
           <p
+            className="text-gray-400 font-mono text-base"
             data-fr="Une proposition ou une question ? Envoyez-moi un message."
             data-en="A proposal or a question? Send me a message."
           >
@@ -14,11 +26,13 @@ export function Mail() {
           </p>
         </div>
 
+        {/* Formulaire */}
         <form
           action="https://formsubmit.co/7a9a6e68336a10f2a94150711362eab2"
-          className="contact-form"
           method="POST"
+          className="grid gap-5 text-left"
         >
+          {/* Champs cachés pour FormSubmit */}
           <input
             type="hidden"
             name="_next"
@@ -32,12 +46,11 @@ export function Mail() {
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
 
-          <div className="form-group">
+          {/* Input Nom */}
+          <div className="flex flex-col gap-2">
             <label
               htmlFor="name"
-              className="form-label"
-              data-fr="Nom"
-              data-en="Name"
+              className="text-sm font-semibold text-gray-300"
             >
               Nom
             </label>
@@ -45,18 +58,17 @@ export function Mail() {
               type="text"
               name="name"
               id="name"
-              className="form-input"
               required
               placeholder="John Doe"
+              className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
             />
           </div>
 
-          <div className="form-group">
+          {/* Input Email */}
+          <div className="flex flex-col gap-2">
             <label
               htmlFor="email"
-              className="form-label"
-              data-fr="Email"
-              data-en="Email"
+              className="text-sm font-semibold text-gray-300"
             >
               Email
             </label>
@@ -64,38 +76,31 @@ export function Mail() {
               type="email"
               name="email"
               id="email"
-              className="form-input"
               required
               placeholder="john@example.com"
+              className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
             />
           </div>
 
-          <div className="form-group">
+          {/* Textarea Message */}
+          <div className="flex flex-col gap-2">
             <label
               htmlFor="message"
-              className="form-label"
-              data-fr="Message"
-              data-en="Message"
+              className="text-sm font-semibold text-gray-300"
             >
               Message
             </label>
             <textarea
               name="message"
               id="message"
-              className="form-textarea"
               required
               placeholder="Bonjour Nolan..."
+              className="p-3 min-h-30 resize-y bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
             ></textarea>
           </div>
 
-          <button
-            type="submit"
-            className="submit-btn"
-            data-fr="Envoyer le message ➤"
-            data-en="Send Message ➤"
-          >
-            Envoyer le message ➤
-          </button>
+          {/* Bouton Submit (Style ajouté pour correspondre au thème) */}
+          <Button title="Envoyer le message ➤" full={true} submit={true} />
         </form>
       </div>
     </section>
