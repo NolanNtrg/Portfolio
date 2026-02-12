@@ -16,7 +16,7 @@ export function Description() {
   return (
     <p
       id="description"
-      className="mb-10 mx-auto max-w-2xl min-h-[1.6em] text-[clamp(1rem,4vw,1.5rem)] text-[#d6d6d6] text-center"
+      className="mb-10 mx-auto max-w-2xl min-h-[1.6em] text-[clamp(1rem,4vw,1.5rem)] text-[#555] text-center font-semibold"
     >
       {displayedText}
     </p>

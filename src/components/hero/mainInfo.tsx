@@ -6,7 +6,7 @@ import { Tag } from "./tag";
 
 export function MainInfo() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center pl-2 pr-2">
       <Tag />
       <Name />
       <Description />

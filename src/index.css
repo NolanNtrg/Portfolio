@@ -7,9 +7,7 @@
   font-weight: 400;
   text-align: center;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
 
   margin: none;
   padding: none;
@@ -21,21 +19,20 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-height: 100vh;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #db0000;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #ffffff;
   }
 }
 

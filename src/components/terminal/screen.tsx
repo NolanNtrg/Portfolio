@@ -10,12 +10,12 @@ const style = {
 
 const scenario = [
   style.comment("# Booting system..."),
-  style.ok("Noyau chargé."),
-  style.ok("Réseau connecté."),
+  style.ok("Connecté."),
   "<br>",
   `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">whoami</span>`,
   "> Nolan Notargiacomo",
-  "> Étudiant IUT2 Grenoble",
+  "> Étudiant en BUT Informatique à l'IUT2 de Grenoble",
+  "> Parcours Développement d'applications Communicantes et Sécurisées",
   "<br>",
   `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">cat skills.txt</span>`,
   "Frontend: React, Vue.js, Flutter",
@@ -119,7 +119,7 @@ export function Screen() {
 
             {/* Terminal Content */}
             <div
-              className={`grow overflow-hidden relative text-xs sm:text-sm md:text-base transition-opacity duration-500 text-left pl-4 ${projectsVisible ? "opacity-0" : "opacity-100"}`}
+              className={`grow overflow-hidden relative text-xl md:text-base transition-opacity duration-500 text-left pl-4 ${projectsVisible ? "opacity-0" : "opacity-100"}`}
             >
               {scenario.map((line, i) => (
                 <div
