@@ -104,9 +104,9 @@ export function Screen() {
   }, []);
 
   return (
-    <main ref={trackRef} className="h-[450vh] relative">
+    <main ref={trackRef} className="h-[450vh]">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="w-screen h-screen bg-[#1a1a1a] shadow-2xl flex flex-col border-[#333] transition-all duration-300 md:w-[95vw] md:h-[90vh] md:rounded-lg md:p-3 md:border">
+        <div className="w-full h-screen bg-[#1a1a1a] shadow-2xl flex flex-col border-[#333] transition-all duration-300 md:w-[95vw] md:h-[90vh] md:rounded-lg md:p-3 md:border">
           <div className="grow rounded-sm relative font-mono text-green-400 pt-2 leading-relaxed shadow-inner flex flex-col bg-[#0c0c0c]">
             {/* Overlay Scanline Effect */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-size-[100%_4px] z-10 pointer-events-none"></div>
