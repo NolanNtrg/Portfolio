@@ -2,10 +2,7 @@ import { Button } from "../button";
 
 export function Mail() {
   return (
-    <section
-      id="contact"
-      className="relative z-10 py-20 px-5 bg-(--section-bg) text-white"
-    >
+    <section id="contact" className="bg-(--section-bg) text-white">
       {/* Container : j'ai mis max-w-2xl pour que ce soit responsive (mieux que 50vw sur mobile) */}
       <div className="w-full max-w-2xl mx-auto text-center">
         {/* Header */}
