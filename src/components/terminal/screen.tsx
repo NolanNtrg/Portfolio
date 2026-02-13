@@ -112,7 +112,7 @@ export function Screen() {
          1. 'h-[100dvh]' au lieu de 'h-screen' pour s'adapter à la barre d'adresse mobile
          2. 'sticky top-0' assure que ça reste collé en haut
       */}
-      <div className="sticky top-0 h-[100dvh] w-full flex items-center justify-center overflow-hidden">
+      <div className="sticky top-0 h-dvh w-full flex items-center justify-center overflow-hidden">
         {/* CORRECTION TAILLE DU TERMINAL :
            Utilisation de 'h-[90dvh]' pour que la boîte intérieure s'adapte aussi dynamiquement
         */}
