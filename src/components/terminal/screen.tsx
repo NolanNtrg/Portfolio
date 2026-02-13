@@ -70,7 +70,6 @@ const projectsData = {
   },
 };
 
-// --- MAIN SCREEN COMPONENT ---
 export function Screen() {
   const [progress, setProgress] = useState(0);
   const [visibleLines, setVisibleLines] = useState(0);
@@ -82,9 +81,13 @@ export function Screen() {
   useEffect(() => {
     const handleScroll = () => {
       if (!trackRef.current) return;
+
+      // On utilise trackRef pour la hauteur totale, mais window.innerHeight pour le calcul
       const rect = trackRef.current.getBoundingClientRect();
-      const scrollableHeight = rect.height - window.innerHeight;
+      const viewportHeight = window.innerHeight;
+      const scrollableHeight = rect.height - viewportHeight;
       const scrolled = -rect.top;
+
       const newProgress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
 
       setProgress(newProgress);
@@ -96,7 +99,7 @@ export function Screen() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); // scenario.length n'est pas nécessaire ici car constant
 
   useEffect(() => {
     const timer = setInterval(() => setMinutes((m) => m + 1), 60000);
@@ -104,10 +107,17 @@ export function Screen() {
   }, []);
 
   return (
-    <main ref={trackRef} className="h-[450vh]">
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="w-full h-screen bg-[#1a1a1a] shadow-2xl flex flex-col border-[#333] transition-all duration-300 md:w-[95vw] md:h-[90vh] md:rounded-lg md:p-3 md:border">
-          <div className="grow rounded-sm relative font-mono text-green-400 pt-2 leading-relaxed shadow-inner flex flex-col bg-[#0c0c0c]">
+    <main ref={trackRef} className="relative h-[450vh]">
+      {/* CORRECTION MOBILE : 
+         1. 'h-[100dvh]' au lieu de 'h-screen' pour s'adapter à la barre d'adresse mobile
+         2. 'sticky top-0' assure que ça reste collé en haut
+      */}
+      <div className="sticky top-0 h-[100dvh] w-full flex items-center justify-center overflow-hidden">
+        {/* CORRECTION TAILLE DU TERMINAL :
+           Utilisation de 'h-[90dvh]' pour que la boîte intérieure s'adapte aussi dynamiquement
+        */}
+        <div className="w-[95vw] h-[90dvh] bg-[#1a1a1a] shadow-2xl flex flex-col border border-[#333] rounded-lg p-2 transition-all duration-300 md:w-[90vw] md:h-[90vh] md:p-3 relative">
+          <div className="grow rounded-sm relative font-mono text-green-400 pt-2 leading-relaxed shadow-inner flex flex-col bg-[#0c0c0c] overflow-hidden">
             {/* Overlay Scanline Effect */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-size-[100%_4px] z-10 pointer-events-none"></div>
 
@@ -119,7 +129,7 @@ export function Screen() {
 
             {/* Terminal Content */}
             <div
-              className={`grow overflow-hidden relative text-xl md:text-base transition-opacity duration-500 text-left pl-4 ${projectsVisible ? "opacity-0" : "opacity-100"}`}
+              className={`grow overflow-hidden relative text-sm md:text-base transition-opacity duration-500 text-left pl-4 ${projectsVisible ? "opacity-0" : "opacity-100"}`}
             >
               {scenario.map((line, i) => (
                 <div
@@ -136,30 +146,32 @@ export function Screen() {
             >
               <header className="text-center my-4 md:my-10">
                 <h2
-                  className="text-3xl md:text-5xl text-white mb-2.5"
+                  className="text-2xl md:text-5xl text-white mb-2.5"
                   style={{ textShadow: "0 0 15px rgba(0, 255, 65, 0.4)" }}
                 >
                   📁 MES PROJETS
                 </h2>
-                <p className="text-gray-400 font-mono">
+                <p className="text-gray-400 font-mono text-xs md:text-base">
                   Projets réalisés en milieu académique et personnel
                 </p>
               </header>
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 px-2.5 pb-16 max-w-6xl mx-auto">
-                {Object.values(projectsData).map((project) => (
+
+              {/* Correction de la grille pour mobile (1 colonne) */}
+              <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 px-2.5 pb-20 max-w-6xl mx-auto">
+                {Object.values(projectsData).map((project, idx) => (
                   <div
-                    key={project.title}
+                    key={idx}
                     className="group bg-gray-900/70 border border-gray-700 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:border-green-400 hover:shadow-2xl hover:shadow-green-500/10"
                   >
-                    <div className="h-52 overflow-hidden relative">
+                    <div className="h-40 md:h-52 overflow-hidden relative">
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <div className="p-5">
-                      <h3 className="text-white text-xl mb-2">
+                    <div className="p-4 md:p-5">
+                      <h3 className="text-white text-lg md:text-xl mb-2">
                         {project.title}
                       </h3>
                       <div className="flex flex-wrap gap-2 mb-3">
@@ -172,7 +184,7 @@ export function Screen() {
                           </span>
                         ))}
                       </div>
-                      <p className="text-sm text-gray-400 line-clamp-3">
+                      <p className="text-xs md:text-sm text-gray-400 line-clamp-3">
                         {project.description}
                       </p>
                     </div>
@@ -182,7 +194,7 @@ export function Screen() {
             </section>
 
             {/* Footer */}
-            <footer className="bg-[#111] text-gray-500 px-4 py-2 text-xs flex justify-between border-t border-gray-700 z-30 mt-auto font-mono">
+            <footer className="bg-[#111] text-gray-500 px-4 py-2 text-xs flex justify-between border-t border-gray-700 z-30 mt-auto font-mono shrink-0">
               <span>
                 STATUS: <span className="text-green-400">CONNECTED</span>
               </span>
