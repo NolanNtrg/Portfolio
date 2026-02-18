@@ -7,18 +7,10 @@ export function Mail() {
       <div className="w-full max-w-2xl mx-auto text-center">
         {/* Header */}
         <div className="mb-10">
-          <h2
-            className="text-4xl mb-3 text-(--term-text) font-bold"
-            data-fr="Me Contacter"
-            data-en="Get In Touch"
-          >
+          <h2 className="text-4xl mb-3 text-(--term-text) font-bold">
             Me Contacter
           </h2>
-          <p
-            className="text-gray-400 font-mono text-base"
-            data-fr="Une proposition ou une question ? Envoyez-moi un message."
-            data-en="A proposal or a question? Send me a message."
-          >
+          <p className="text-gray-400 font-mono text-base">
             Une proposition ou une question ? Envoyez-moi un message.
           </p>
         </div>
