@@ -8,7 +8,7 @@ export function Mail() {
         {/* Header */}
         <div className="mb-10">
           <h2 className="text-4xl mb-3 text-(--term-text) font-bold">
-            Me Contacter
+            ME CONTACTER
           </h2>
           <p className="text-gray-400 font-mono text-base">
             Une proposition ou une question ? Envoyez-moi un message.

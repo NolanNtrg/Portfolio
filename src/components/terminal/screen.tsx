@@ -157,7 +157,7 @@ export function Screen() {
               >
                 {/* Projects Header - Fixed at top */}
                 <div className="mb-3 text-center shrink-0">
-                  <h2 className="text-xl md:text-3xl lg:text-4xl text-white mb-2 font-bold">
+                  <h2 className="text-4xl md:text-3xl lg:text-4xl text-white mb-2 font-bold">
                     MES PROJETS
                   </h2>
                   <p className="text-gray-400 font-mono text-xs md:text-sm">

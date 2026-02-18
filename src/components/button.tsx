@@ -1,26 +1,46 @@
-export function Button({
-  title,
-  full = false,
-  submit = false,
-  icon = "",
-  small = false,
-}: {
+type ButtonProps = {
   title: string;
+  href?: string;
+  download?: string;
   full?: boolean;
   submit?: boolean;
   icon?: string;
   small?: boolean;
-}) {
+};
+
+export function Button({
+  title,
+  href,
+  download,
+  full = false,
+  submit = false,
+  icon = "",
+  small = false,
+}: ButtonProps) {
+  const baseStyles = `
+    font-ibm font-semibold no-underline border-2 rounded-sm transition-all duration-300 ease-in-out flex items-center gap-2 cursor-pointer
+      ${full ? "bg-(--background-color-items) text-(--color-text) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text) hover:bg-(--background-color-items)"}
+      ${small ? "px-3 py-1.5 text-xs" : "px-6 py-3 text-[0.9rem]"}
+      transition-all duration-300 ease-in-out hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]}   
+  `;
+
+  if (href) {
+    return (
+      <a href={href} download={download} className={baseStyles}>
+        {icon && <i className={`fa-solid ${icon}`}></i>}
+        {title}
+      </a>
+    );
+  }
+
+  // 4. Sinon, on rend le <button> classique
   return (
     <button
       type={submit ? "submit" : "button"}
-      className={`font-ibm font-semibold no-underline border-2 rounded-sm transition-all duration-300 ease-in-out flex items-center gap-2 cursor-pointer
-      ${full ? "bg-(--background-color-items) text-(--color-text) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text) hover:bg-(--background-color-items)"}
-      ${small ? "px-3 py-1.5 text-xs" : "px-6 py-3 text-[0.9rem]"}
-      transition-all duration-300 ease-in-out hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]`}
-      onClick={() => alert("YES")}
+      className={baseStyles}
+      onClick={() => alert("Click")}
     >
-      {icon && <span className={icon}></span>}
+      {icon && <i className={`fa-solid ${icon}`}></i>}
       {title}
     </button>
   );

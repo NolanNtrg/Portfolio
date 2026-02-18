@@ -1,24 +1,41 @@
-export function EducationContainer() {
+export function EducationContainer({
+  current = false,
+  year,
+  degree,
+  school,
+  description,
+}: {
+  current?: boolean;
+  year: string;
+  degree: string;
+  school: string;
+  description: string;
+}) {
   return (
-    <div className="m-[2vw] mr-[55vw] bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-green-400 hover:shadow-xl hover:shadow-green-500/10">
+    <div className="m-[2vw] mr-[55vw] bg-gray-900 border  rounded-lg overflow-hidden border-green-400 hover:shadow-xl hover:shadow-green-500/10">
       <div className="p-3 md:p-4">
-        <h3 className="text-white text-base md:text-lg mb-1.5 font-semibold">
-          BracketBuddy
-        </h3>
-        <div className="flex flex-wrap gap-1.5 mb-2">
-          <span className="inline-block text-xs px-2 py-0.5 bg-gray-700/50 rounded-md text-gray-300">
-            Java
-          </span>
-          <span className="inline-block text-xs px-2 py-0.5 bg-gray-700/50 rounded-md text-gray-300">
-            JavaFX
-          </span>
-          <span className="inline-block text-xs px-2 py-0.5 bg-gray-700/50 rounded-md text-gray-300">
-            SQL
-          </span>
-        </div>
-        <p className="text-xs md:text-sm text-gray-400 line-clamp-2 font-ibm ">
-          we sdk la team
-        </p>
+        {current && (
+          <div className="inline-block mb-3 px-3 py-1 bg-green-400/10 border border-green-400 rounded-full">
+            <span className="text-green-400 text-xs font-mono font-bold flex items-center gap-2">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              EN COURS
+            </span>
+          </div>
+        )}
+        <h3 className="text-white text-base md:text-lg mb-1.5 font-semibold"></h3>
+        {/* Year */}
+        <div className="text-green-400 font-mono text-sm mb-2">{year}</div>
+        {/* Degree */}
+        <h3 className="text-xl font-bold mb-2 text-white">{degree}</h3>
+        {/* School */}
+        <p className="text-gray-400 font-mono text-sm mb-4">{school}</p>
+        {/* Description */}
+        <ul className="space-y-2">
+          <li className="text-gray-300 text-sm flex items-start gap-2">
+            <span className="text-green-400 mt-1">▸</span>
+            <span className="font-mono">{description}</span>
+          </li>
+        </ul>
       </div>
     </div>
   );

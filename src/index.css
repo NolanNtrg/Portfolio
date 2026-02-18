@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background-color: #9097c0;
+  --background-color: #abaecd85;
   --background-color-items: black;
   --color-name: #1a1a1a;
   --color-animations: #555;
@@ -11,11 +11,11 @@
 }
 
 .dark-theme {
-  --background-color: #2c2e3c;
-  --background-color-items: black;
-  --color-name: #1a1a1a;
-  --color-animations: #555;
-  --color-text: rgb(237, 237, 237);
+  --background-color: #09090bf5;
+  --background-color-items: #eaeaea;
+  --color-name: #c4c4c4;
+  --color-animations: #a1a1aa;
+  --color-text: rgb(0, 0, 0);
   --green: var(--color-green-600);
 }
 
@@ -31,8 +31,8 @@
 
 .fixed-bg {
   background-image:
-    radial-gradient(#797979 1px, transparent 1px),
-    radial-gradient(#797979 1px, transparent 1px);
+    radial-gradient(rgba(121, 121, 121, 0.3) 1px, transparent 1px),
+    radial-gradient(rgba(121, 121, 121, 0.3) 1px, transparent 1px);
   background-size: 20px 20px;
   background-position:
     0 0,
