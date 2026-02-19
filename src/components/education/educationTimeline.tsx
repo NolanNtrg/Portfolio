@@ -11,9 +11,9 @@ export function EducationTimeline() {
     status: "completed" | "current";
   }
 
-  const educationData: EducationItem[] = t("education.timeline", {
+  const educationData = t("education.timeline", {
     returnObjects: true,
-  });
+  }) as unknown as EducationItem[];
 
   return (
     <div className="relative mb-16">
