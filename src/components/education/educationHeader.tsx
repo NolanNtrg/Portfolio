@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
+
 export function EducationHeader() {
+  const { t } = useTranslation();
   return (
     <div className="mb-10 text-center shrink-0">
       <h2 className="text-4xl md:text-3xl lg:text-4xl text-(--color-text) mb-2 font-bold">
-        MON PARCOURS
+        {t("education.header.title")}
       </h2>
       <p className="text-(--color-subtext) font-mono text-base">
-        Formation académique et compétences acquises
+        {t("education.header.subtitle")}
       </p>
     </div>
   );

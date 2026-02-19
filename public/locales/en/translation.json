@@ -1,0 +1,144 @@
+{
+  "projectsContent": {
+    "title": "Super Project Name",
+    "description": "Here is a detailed description of the project. I explain here the initial context, the problem encountered by the client or the users, and the technical approach that I adopted to carry out this realization from A to Z.",
+    "keyPointsTitle": "Key Points & Features",
+    "architecture": "<strong>Architecture:</strong> Implementation of a clean and scalable architecture.",
+    "performance": "<strong>Performance:</strong> Optimization of loading time and API requests.",
+    "security": "<strong>Security:</strong> Implementation of a robust authentication system.",
+    "responsive": "<strong>Responsive:</strong> 100% adaptable design on mobile, tablet and desktop.",
+    "technologiesTitle": "Technologies Used",
+    "visitSite": "Visit the site ↗",
+    "sourceCode": "Source Code (GitHub)"
+  },
+  "callToAction": "▼ SCROLL TO LEARN MORE ▼",
+  "description": "Computer science student at IUT2 Grenoble",
+  "heroButtons": {
+    "cv": "See my resume",
+    "contact": "Contact me"
+  },
+  "tag": "Hello ! I am",
+  "education": {
+    "current": "IN PROGRESS",
+    "header": {
+      "title": "MY JOURNEY",
+      "subtitle": "Academic training and skills acquired"
+    },
+    "timeline": [
+      {
+        "year": "2025 - 2026",
+        "degree": "University Diploma of Technology in Computer Science - 2nd year",
+        "school": "IUT2, Grenoble",
+        "description": [
+          "Course: Development of Communicating and Secure Applications",
+          "Deployment and security of network infrastructures (Proxmox, nftables)",
+          "Full-stack and DevOps projects (Docker, Git)",
+          "Web development (PHP/Symfony, JavaScript)"
+        ],
+        "status": "current"
+      },
+      {
+        "year": "2023 - 2024",
+        "degree": "University Diploma of Technology in Computer Science - 1st year",
+        "school": "IUT2, Grenoble",
+        "description": [
+          "Fundamentals of object-oriented programming (Java)",
+          "Databases (SQL, PostgreSQL)",
+          "Systems and administration (Debian)",
+          "Web development (HTML, CSS, JavaScript)"
+        ],
+        "status": "completed"
+      },
+      {
+        "year": "2021 - 2024",
+        "degree": "General Baccalaureate",
+        "school": "Lycée Jean Moulin, Albertville",
+        "description": [
+          "Mention: Very Good",
+          "Specialties: Mathematics, Physics-Chemistry"
+        ],
+        "status": "completed"
+      }
+    ]
+  },
+  "contact": {
+    "title": "CONTACT ME",
+    "subtitle": "A proposal or a question? Send me a message.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Hello Nolan...",
+      "submit": "Send message ➤"
+    }
+  },
+  "terminal": {
+    "scenario": [
+      "# Booting system...",
+      "Connected.",
+      "<br>",
+      "whoami",
+      "> Nolan Notargiacomo",
+      "> Computer Science student at IUT2 Grenoble",
+      "> Course: Development of Communicating and Secure Applications",
+      "<br>",
+      "cat skills.txt",
+      "Frontend: React, Vue.js, Flutter",
+      "Backend: Node.js, Python, Java",
+      "DevOps: Docker, Git",
+      "<br>",
+      "./start_ui.sh",
+      "Loading UI...",
+      "████████████████ 100%",
+      "<br>",
+      "ls -la projects/"
+    ],
+    "projectsData": {
+      "1": {
+        "title": "BracketBuddy",
+        "stack": ["Java", "JavaFX", "HTML", "CSS"],
+        "description": "Design and development of a platform for creating and managing basketball tournaments",
+        "image": "/BracketBuddy.png"
+      },
+      "2": {
+        "title": "Entour'Âge",
+        "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
+        "description": "End-to-end encrypted messaging. HD video calls and secure sharing.",
+        "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80"
+      },
+      "3": {
+        "title": "Econocom Website",
+        "stack": ["Docker", "Kubernetes"],
+        "description": "Design and development of a fictional website for the Econocom company",
+        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80"
+      },
+      "4": {
+        "title": "AI TaskBot",
+        "stack": ["Python", "TensorFlow"],
+        "description": "Intelligent assistant for task management. Machine learning and NLP.",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+      },
+      "5": {
+        "title": "E-Commerce Platform",
+        "stack": ["Vue.js", "PostgreSQL"],
+        "description": "Complete online sales platform. Secure payment and stock management.",
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+      }
+    },
+    "header": {
+      "tty": "TTY1: /dev/pts/0",
+      "uptime": "UPTIME: {{minutes}} min"
+    },
+    "projectsHeader": {
+      "title": "MY PROJECTS",
+      "subtitle": "Projects carried out in an academic and personal context"
+    },
+    "footer": {
+      "status": "STATUS: ",
+      "connected": "CONNECTED",
+      "buffer": "BUFFER: {{progress}}%"
+    }
+  }
+}

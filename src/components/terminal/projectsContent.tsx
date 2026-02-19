@@ -1,7 +1,9 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../button";
 
 export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
+  const { t } = useTranslation();
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -22,13 +24,10 @@ export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
         <div className="overflow-y-auto custom-scrollbar p-6 md:p-10 max-h-[85vh]">
           <div className="mt-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-400 md:p-0 pr-10">
-              Nom du Super Projet
+              {t("projectsContent.title")}
             </h2>
             <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
-              Voici une description détaillée du projet. J'explique ici le
-              contexte initial, la problématique rencontrée par le client ou les
-              utilisateurs, et l'approche technique que j'ai adoptée pour mener
-              à bien cette réalisation de A à Z.
+              {t("projectsContent.description")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -50,31 +49,35 @@ export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">
-                Points Clés & Fonctionnalités
+                {t("projectsContent.keyPointsTitle")}
               </h3>
               <ul className="list-disc list-inside space-y-2 text-gray-300 marker:text-green-400">
-                <li>
-                  <strong>Architecture :</strong> Mise en place d'une
-                  architecture propre et scalable.
-                </li>
-                <li>
-                  <strong>Performance :</strong> Optimisation du temps de
-                  chargement et requêtes API.
-                </li>
-                <li>
-                  <strong>Sécurité :</strong> Implémentation d'un système
-                  d'authentification robuste.
-                </li>
-                <li>
-                  <strong>Responsive :</strong> Design 100% adaptable sur
-                  mobile, tablette et desktop.
-                </li>
+                <li
+                  dangerouslySetInnerHTML={{
+                    __html: t("projectsContent.architecture"),
+                  }}
+                />
+                <li
+                  dangerouslySetInnerHTML={{
+                    __html: t("projectsContent.performance"),
+                  }}
+                />
+                <li
+                  dangerouslySetInnerHTML={{
+                    __html: t("projectsContent.security"),
+                  }}
+                />
+                <li
+                  dangerouslySetInnerHTML={{
+                    __html: t("projectsContent.responsive"),
+                  }}
+                />
               </ul>
             </div>
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">
-                Technologies Utilisées
+                {t("projectsContent.technologiesTitle")}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "TypeScript", "Tailwind CSS", "Node.js", "Vite"].map(
@@ -91,8 +94,8 @@ export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-gray-800">
-              <Button title="Visiter le site ↗" />
-              <Button title="Code Source (GitHub)" />
+              <Button title={t("projectsContent.visitSite")} />
+              <Button title={t("projectsContent.sourceCode")} />
             </div>
           </div>
         </div>

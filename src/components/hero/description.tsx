@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Description() {
-  const fullText = "Étudiant en informatique à l'IUT2 de Grenoble";
+  const { t } = useTranslation();
+  const fullText = t("description");
   const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    setDisplayedText("");
+  }, [fullText]);
 
   useEffect(() => {
     if (displayedText.length < fullText.length) {

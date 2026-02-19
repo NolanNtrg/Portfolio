@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export function EducationContainer({
   current = false,
   year,
@@ -13,6 +15,7 @@ export function EducationContainer({
   description: string[];
   index: number;
 }) {
+  const { t } = useTranslation();
   return (
     <div
       className={`m-12 md:flex md:m-5 items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
@@ -23,7 +26,7 @@ export function EducationContainer({
             <div className="inline-block mb-3 px-3 py-1 bg-green-400/10 border border-green-400 rounded-full">
               <span className="text-green-400 text-xs font-mono font-bold flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                EN COURS
+                {t("education.current")}
               </span>
             </div>
           )}

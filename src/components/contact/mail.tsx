@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "../button";
 
 export function Mail() {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="bg-black text-white p-10">
       {/* Container : j'ai mis max-w-2xl pour que ce soit responsive (mieux que 50vw sur mobile) */}
@@ -8,10 +10,10 @@ export function Mail() {
         {/* Header */}
         <div className="mb-10 contact">
           <h2 className="text-4xl mb-3 text-(--term-text) font-bold">
-            ME CONTACTER
+            {t("contact.title")}
           </h2>
           <p className="text-gray-400 font-mono text-base">
-            Une proposition ou une question ? Envoyez-moi un message.
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -41,14 +43,14 @@ export function Mail() {
               htmlFor="name"
               className="text-sm font-semibold text-gray-300"
             >
-              Nom
+              {t("contact.form.name")}
             </label>
             <input
               type="text"
               name="name"
               id="name"
               required
-              placeholder="John Doe"
+              placeholder={t("contact.form.namePlaceholder")}
               className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
             />
           </div>
@@ -59,14 +61,14 @@ export function Mail() {
               htmlFor="email"
               className="text-sm font-semibold text-gray-300"
             >
-              Email
+              {t("contact.form.email")}
             </label>
             <input
               type="email"
               name="email"
               id="email"
               required
-              placeholder="john@example.com"
+              placeholder={t("contact.form.emailPlaceholder")}
               className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
             />
           </div>
@@ -77,20 +79,20 @@ export function Mail() {
               htmlFor="message"
               className="text-sm font-semibold text-gray-300"
             >
-              Message
+              {t("contact.form.message")}
             </label>
             <textarea
               name="message"
               id="message"
               required
-              placeholder="Bonjour Nolan..."
+              placeholder={t("contact.form.messagePlaceholder")}
               className="p-3 min-h-30 resize-y bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
             ></textarea>
           </div>
 
           {/* Bouton Submit (Style ajouté pour correspondre au thème) */}
           <Button
-            title="Envoyer le message ➤"
+            title={t("contact.form.submit")}
             full={true}
             submit={true}
             color="white"

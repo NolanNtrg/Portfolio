@@ -1,0 +1,144 @@
+{
+  "projectsContent": {
+    "title": "Nom du Super Projet",
+    "description": "Voici une description détaillée du projet. J'explique ici le contexte initial, la problématique rencontrée par le client ou les utilisateurs, et l'approche technique que j'ai adoptée pour mener à bien cette réalisation de A à Z.",
+    "keyPointsTitle": "Points Clés & Fonctionnalités",
+    "architecture": "<strong>Architecture :</strong> Mise en place d'une architecture propre et scalable.",
+    "performance": "<strong>Performance :</strong> Optimisation du temps de chargement et requêtes API.",
+    "security": "<strong>Sécurité :</strong> Implémentation d'un système d'authentification robuste.",
+    "responsive": "<strong>Responsive :</strong> Design 100% adaptable sur mobile, tablette et desktop.",
+    "technologiesTitle": "Technologies Utilisées",
+    "visitSite": "Visiter le site ↗",
+    "sourceCode": "Code Source (GitHub)"
+  },
+  "callToAction": "▼ SCROLLEZ POUR EN SAVOIR PLUS ▼",
+  "description": "Étudiant en informatique à l'IUT2 de Grenoble",
+  "heroButtons": {
+    "cv": "Voir mon CV",
+    "contact": "Me contacter"
+  },
+  "tag": "Bonjour ! Je suis",
+  "education": {
+    "current": "EN COURS",
+    "header": {
+      "title": "MON PARCOURS",
+      "subtitle": "Formation académique et compétences acquises"
+    },
+    "timeline": [
+      {
+        "year": "2025 - 2026",
+        "degree": "BUT Informatique - 2ème année",
+        "school": "IUT2, Grenoble",
+        "description": [
+          "Parcours : Développement d'applications Communicantes et Sécurisées",
+          "Déploiement et sécurisation d'infrastructures réseaux (Proxmox, nftables)",
+          "Projets full-stack et DevOps (Docker, Git)",
+          "Dévelopement web (PHP/Symfony, JavaScript)"
+        ],
+        "status": "current"
+      },
+      {
+        "year": "2023 - 2024",
+        "degree": "BUT Informatique - 1ère année",
+        "school": "IUT2 de Grenoble",
+        "description": [
+          "Fondamentaux de la programmation orientée objets (Java)",
+          "Bases de données (SQL, PostgreSQL)",
+          "Systèmes et administration (Debian)",
+          "Développement web (HTML, CSS, JavaScript)"
+        ],
+        "status": "completed"
+      },
+      {
+        "year": "2021 - 2024",
+        "degree": "Baccalauréat Général",
+        "school": "Lycée Jean Moulin, Albertville",
+        "description": [
+          "Mention : Très Bien",
+          "Spécialités : Mathématiques, Physique-Chimie"
+        ],
+        "status": "completed"
+      }
+    ]
+  },
+  "contact": {
+    "title": "ME CONTACTER",
+    "subtitle": "Une proposition ou une question ? Envoyez-moi un message.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Bonjour Nolan...",
+      "submit": "Envoyer le message ➤"
+    }
+  },
+  "terminal": {
+    "scenario": [
+      "# Booting system...",
+      "Connecté.",
+      "<br>",
+      "whoami",
+      "> Nolan Notargiacomo",
+      "> Étudiant en BUT Informatique à l'IUT2 de Grenoble",
+      "> Parcours Développement d'applications Communicantes et Sécurisées",
+      "<br>",
+      "cat skills.txt",
+      "Frontend: React, Vue.js, Flutter",
+      "Backend: Node.js, Python, Java",
+      "DevOps: Docker, Git",
+      "<br>",
+      "./start_ui.sh",
+      "Chargement de l'interface...",
+      "████████████████ 100%",
+      "<br>",
+      "ls -la projects/"
+    ],
+    "projectsData": {
+      "1": {
+        "title": "BracketBuddy",
+        "stack": ["Java", "JavaFX", "HTML", "CSS"],
+        "description": "Conception et développement d'une plateforme de création et de gestion de tournois de basket",
+        "image": "/BracketBuddy.png"
+      },
+      "2": {
+        "title": "Entour'Âge",
+        "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
+        "description": "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
+        "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80"
+      },
+      "3": {
+        "title": "Site web Econocom",
+        "stack": ["Docker", "Kubernetes"],
+        "description": "Conception et développement d'un site web fictif pour l'entreprise Econocom",
+        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80"
+      },
+      "4": {
+        "title": "AI TaskBot",
+        "stack": ["Python", "TensorFlow"],
+        "description": "Assistant intelligent pour la gestion de tâches. Machine learning et NLP.",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+      },
+      "5": {
+        "title": "E-Commerce Platform",
+        "stack": ["Vue.js", "PostgreSQL"],
+        "description": "Plateforme complète de vente en ligne. Paiement sécurisé et gestion stock.",
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+      }
+    },
+    "header": {
+      "tty": "TTY1: /dev/pts/0",
+      "uptime": "UPTIME: {{minutes}} min"
+    },
+    "projectsHeader": {
+      "title": "MES PROJETS",
+      "subtitle": "Projets réalisés en milieu académique et personnel"
+    },
+    "footer": {
+      "status": "STATUS: ",
+      "connected": "CONNECTED",
+      "buffer": "BUFFER: {{progress}}%"
+    }
+  }
+}
