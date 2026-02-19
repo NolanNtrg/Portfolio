@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { ProjectsContainer } from "./projectsContainer";
 
 // --- CONFIG & DATA ---
 const style = {
@@ -31,26 +32,25 @@ const scenario = [
 
 const projectsData = {
   "1": {
-    title: "DataFlow Analytics",
-    stack: ["React", "Node.js"],
+    title: "BracketBuddy",
+    stack: ["Java", "JavaFX", "HTML", "CSS"],
     description:
-      "Plateforme d'analyse de données temps réel. Dashboard interactif et reporting automatisé.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "Conception et développement d'une plateforme de création et de gestion de tournois de basket",
+    image: "/BracketBuddy.png",
   },
   "2": {
-    title: "SecureChat Pro",
-    stack: ["Flutter", "Firebase"],
+    title: "Entour'Âge",
+    stack: ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
     description:
       "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
     image:
       "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
   },
   "3": {
-    title: "CloudDeploy Manager",
+    title: "Site web Econocom",
     stack: ["Docker", "Kubernetes"],
     description:
-      "Outil de déploiement automatisé. CI/CD pipeline et monitoring intégré.",
+      "Conception et développement d'un site web fictif pour l'entreprise Econocom",
     image:
       "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
   },
@@ -73,36 +73,26 @@ const projectsData = {
 };
 
 export function Screen() {
-  const [progress, setProgress] = useState(0);
-  const [minutes, setMinutes] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
+  const projectsContainerRef = useRef<HTMLDivElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
 
-  // Zones de progression réajustées :
-  // 0-35% : lignes du terminal (plus lent pour avoir le temps de lire)
-  // 35-100% : scroll rapide des projets (plus réactif à la molette)
+  const [globalProgress, setGlobalProgress] = useState(0);
+  const [minutes, setMinutes] = useState(0);
 
-  const terminalProgress = Math.min(progress / 0.45, 1);
-  const projectsProgress = Math.max(0, (progress - 0.5) / 0.5);
+  // Nouveau state pour calculer de combien de pixels on doit scroller les projets
+  const [maxTranslate, setMaxTranslate] = useState(0);
 
-  const visibleLines = Math.floor(terminalProgress * (scenario.length + 1));
-  const showProjects = progress > 0.45;
-
-  // Distance de scroll réduite : juste ce qu'il faut pour voir le dernier projet
-  // La grille fait ~120vh de haut, on voit ~60vh, donc scroll de ~62vh suffit
-  const maxScrollDistance = 50; // en vh
-  const scrollOffset = projectsProgress * maxScrollDistance;
-
+  // 1. Calcul de la progression globale
   useEffect(() => {
     const handleScroll = () => {
       if (!trackRef.current) return;
-
       const rect = trackRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      const scrollableHeight = rect.height - viewportHeight;
+      const scrollableDistance = rect.height - viewportHeight;
       const scrolled = -rect.top;
-
-      const newProgress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
-      setProgress(newProgress);
+      const progress = Math.max(0, Math.min(1, scrolled / scrollableDistance));
+      setGlobalProgress(progress);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -110,31 +100,76 @@ export function Screen() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 2. Calcul de la distance de défilement des projets
+  // Il faut le recalculer si la taille de la fenêtre change
+  useEffect(() => {
+    const calculateTranslation = () => {
+      if (projectsContainerRef.current && terminalBodyRef.current) {
+        const projectsHeight = projectsContainerRef.current.offsetHeight;
+        const terminalHeight = terminalBodyRef.current.offsetHeight;
+
+        // On ne scrolle que si le contenu est plus grand que le terminal
+        if (projectsHeight > terminalHeight) {
+          // La distance exacte pour que le bas de la liste touche le bas du terminal
+          setMaxTranslate(projectsHeight - terminalHeight);
+        } else {
+          setMaxTranslate(0);
+        }
+      }
+    };
+
+    calculateTranslation();
+    window.addEventListener("resize", calculateTranslation);
+    return () => window.removeEventListener("resize", calculateTranslation);
+  }, []); // Recalcul au montage
+
   useEffect(() => {
     const timer = setInterval(() => setMinutes((m) => m + 1), 60000);
     return () => clearInterval(timer);
   }, []);
 
+  // --- DÉCOUPAGE DE L'ANIMATION EN 3 PHASES ---
+
+  const textPhaseEnd = 0.45; // À 20%, le texte a fini d'apparaître
+  const projectsScrollStart = 0.5; // À 35%, les projets commencent à monter
+
+  // Phase 1 : Le texte (0 à 20%)
+  const textProgress = Math.min(globalProgress / textPhaseEnd, 1);
+  const visibleLines = Math.floor(textProgress * (scenario.length + 1));
+
+  // Phase 2 : L'apparition (20% à 35%)
+  // Le texte disparaît et les projets apparaissent grâce à l'opacité CSS, mais le scrollProgress reste à 0
+  const isTextFinished = globalProgress > textPhaseEnd;
+
+  // Phase 3 : Le défilement des projets (35% à 100%)
+  let projectsScrollProgress = 0;
+  if (globalProgress > projectsScrollStart) {
+    projectsScrollProgress =
+      (globalProgress - projectsScrollStart) / (1 - projectsScrollStart);
+  }
+  // On s'assure que la valeur ne dépasse jamais 1 (100%)
+  projectsScrollProgress = Math.min(1, projectsScrollProgress);
+
   return (
-    <main ref={trackRef} className="relative h-[320vh]">
-      <div className="sticky top-0 h-dvh w-full flex items-center justify-center overflow-hidden">
-        <div className="w-[95vw] h-[90dvh] bg-[#1a1a1a] shadow-2xs flex flex-col border border-[#333] rounded-lg p-2 transition-all duration-300 md:w-[90vw] md:h-[90vh] md:p-3 relative">
-          <div className="grow rounded-sm relative font-mono text-green-400 pt-2 leading-relaxed shadow-inner flex flex-col bg-[#0c0c0c] overflow-hidden">
-            {/* Header */}
-            <header className="border-b border-gray-700 pb-2.5 mb-4 text-gray-500 text-xs shrink-0 flex justify-between z-20 relative bg-[#0c0c0c]">
-              <span className="ml-3">TTY1: /dev/pts/0</span>
-              <span className="mr-3">UPTIME: {minutes} min</span>
+    <main className="text-white font-mono w-full">
+      <section ref={trackRef} className="h-[250vh] relative w-full">
+        <div className="sticky top-0 h-screen w-full flex items-center justify-center p-2 md:p-4 overflow-hidden">
+          <div className="w-[95vw] h-[90dvh] md:w-[90vw] md:h-[90vh] border border-[#333] bg-[#0c0c0c] rounded-lg flex flex-col relative overflow-hidden pointer-events-none">
+            <header className="h-10 border-b border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-gray-500 bg-[#0c0c0c]">
+              <span>TTY1: /dev/pts/0</span>
+              <span>UPTIME: {minutes} min</span>
             </header>
 
-            {/* Content Container - NO OVERFLOW, just absolute positioned content */}
-            <div className="grow relative px-2 md:px-4">
-              {/* Terminal Lines */}
+            {/* CORPS DU TERMINAL (On y ajoute une réf pour mesurer sa taille) */}
+            <div
+              ref={terminalBodyRef}
+              className="flex-1 relative overflow-hidden pointer-events-auto"
+            >
+              {/* Le Texte */}
               <div
-                className={`transition-opacity duration-700 ${
-                  showProjects ? "opacity-0" : "opacity-100"
-                }`}
+                className={`absolute inset-0 p-4 transition-opacity duration-500 z-10 ${isTextFinished ? "opacity-0 pointer-events-none" : "opacity-100"}`}
               >
-                <div className="text-sm md:text-base text-left">
+                <div className="text-sm md:text-base text-green-400">
                   {scenario.map((line, i) => (
                     <div
                       key={i}
@@ -149,15 +184,19 @@ export function Screen() {
                 </div>
               </div>
 
-              {/* Projects Section - Smooth Scrolling Display */}
+              {/* Les Projets : top-0, apparaissent avec transition, et défilent en pixels (px) */}
               <div
-                className={`absolute inset-0 transition-opacity duration-700 px-2 flex flex-col ${
-                  showProjects ? "opacity-100" : "opacity-0"
-                }`}
+                ref={projectsContainerRef}
+                className={`absolute left-0 w-full px-4 md:px-8 pb-10 transition-opacity duration-500 ${isTextFinished ? "opacity-100" : "opacity-0"}`}
+                style={{
+                  top: "0",
+                  // On translate en pixels en fonction du maximum calculé
+                  transform: `translateY(-${projectsScrollProgress * maxTranslate}px)`,
+                  willChange: "transform",
+                }}
               >
-                {/* Projects Header - Fixed at top */}
-                <div className="mb-3 text-center shrink-0">
-                  <h2 className="text-4xl md:text-3xl lg:text-4xl text-white mb-2 font-bold">
+                <div className="text-center mb-10 pt-6">
+                  <h2 className="text-4xl md:text-3xl lg:text-4xl text-(rgb(237, 237, 237)) mb-2 font-bold">
                     MES PROJETS
                   </h2>
                   <p className="text-gray-400 font-mono text-xs md:text-sm">
@@ -165,78 +204,27 @@ export function Screen() {
                   </p>
                 </div>
 
-                {/* Projects Grid Container with simulated scroll */}
-                <div className="flex-1 relative overflow-hidden pt-1">
-                  <div
-                    className="will-change-transform"
-                    style={{
-                      transform: `translateY(-${scrollOffset}vh)`,
-                    }}
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-5xl mx-auto pb-10">
-                      {Object.values(projectsData).map((project, idx) => (
-                        <div
-                          key={idx}
-                          className="group bg-gray-900/70 border border-gray-700 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-green-400 hover:shadow-xl hover:shadow-green-500/10"
-                        >
-                          <div className="h-32 md:h-40 overflow-hidden relative">
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                          </div>
-                          <div className="p-3 md:p-4">
-                            <h3 className="text-white text-base md:text-lg mb-1.5 font-semibold">
-                              {project.title}
-                            </h3>
-                            <div className="flex flex-wrap gap-1.5 mb-2">
-                              {project.stack.map((tech) => (
-                                <span
-                                  key={tech}
-                                  className="inline-block text-xs px-2 py-0.5 bg-gray-700/50 rounded-md text-gray-300"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                            <p className="text-xs md:text-sm text-gray-400 line-clamp-2">
-                              {project.description}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-
-                      {/* End indicator */}
-                      <div className="col-span-full text-center mt-4">
-                        <p
-                          className={`font-mono text-xs md:text-sm transition-colors duration-500 ${
-                            projectsProgress > 0.9
-                              ? "text-green-400"
-                              : "text-gray-500"
-                          }`}
-                        >
-                          {projectsProgress > 0.9
-                            ? "✓ Fin des projets - Continuez à scroller"
-                            : "↓ Scrollez pour voir tous les projets ↓"}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                  {Object.values(projectsData).map((project) => (
+                    <ProjectsContainer
+                      image={project.image}
+                      title={project.title}
+                      tech={project.stack}
+                      description={project.description}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
-
-            {/* Footer */}
-            <footer className="bg-[#111] text-gray-500 px-4 py-2 text-xs flex justify-between border-t border-gray-700 z-30 mt-auto font-mono shrink-0">
+            <footer className="h-8 border-t border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-gray-500 bg-[#111]">
               <span>
                 STATUS: <span className="text-green-400">CONNECTED</span>
               </span>
-              <span>BUFFER: {Math.round(progress * 100)}%</span>
+              <span>BUFFER: {Math.round(globalProgress * 100)}%</span>
             </footer>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

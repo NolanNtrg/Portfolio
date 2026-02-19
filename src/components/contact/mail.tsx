@@ -17,7 +17,7 @@ export function Mail() {
 
         {/* Formulaire */}
         <form
-          action="https://formsubmit.co/7a9a6e68336a10f2a94150711362eab2"
+          action="https://formsubmit.co/notargiacomo.nolan07@gmail.com"
           method="POST"
           className="grid gap-5 text-left"
         >
@@ -25,7 +25,7 @@ export function Mail() {
           <input
             type="hidden"
             name="_next"
-            value="https://nolan-notargiacomo.alwaysdata.net/"
+            value="https://nolan-notargiacomo.netlify.app/"
           />
           <input
             type="hidden"
@@ -89,7 +89,12 @@ export function Mail() {
           </div>
 
           {/* Bouton Submit (Style ajouté pour correspondre au thème) */}
-          <Button title="Envoyer le message ➤" full={true} submit={true} />
+          <Button
+            title="Envoyer le message ➤"
+            full={true}
+            submit={true}
+            color="white"
+          />
         </form>
       </div>
     </section>

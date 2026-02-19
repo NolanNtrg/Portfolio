@@ -7,6 +7,7 @@ type ButtonProps = {
   icon?: string;
   small?: boolean;
   onClick?: () => void;
+  color?: "white" | "black";
 };
 
 export function Button({
@@ -18,12 +19,14 @@ export function Button({
   icon = "",
   small = false,
   onClick,
+  color,
 }: ButtonProps) {
   const baseStyles = `
     font-ibm font-semibold no-underline border-2 rounded-sm transition-all duration-300 ease-in-out flex items-center gap-2 cursor-pointer
-      ${full ? "bg-(--background-color-items) text-(--color-text-contrasted) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text-contrasted) hover:bg-(--background-color-items)"}
-      ${small ? "px-3 py-1.5 text-xs" : "px-6 py-3 text-[0.9rem]"}
-      transition-all duration-300 ease-in-out hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]}   
+    ${color === "white" ? "bg-(#eaeaea)" : ""}  
+    ${full ? "bg-(--background-color-items) text-(--color-text-contrasted) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text-contrasted) hover:bg-(--background-color-items)"}
+    ${small ? "px-3 py-1.5 text-xs" : "px-6 py-3 text-[0.9rem]"} 
+    transition-all duration-300 ease-in-out hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]}   
   `;
 
   if (href) {
@@ -35,7 +38,6 @@ export function Button({
     );
   }
 
-  // 4. Sinon, on rend le <button> classique
   return (
     <button
       type={submit ? "submit" : "button"}

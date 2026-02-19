@@ -3,15 +3,6 @@ import { useEffect, useState } from "react";
 const ThemeToggle = () => {
   const [isDarkTheme, setDarkTheme] = useState<boolean>(false);
 
-  // Premier useEffect : Charger le thème au démarrage
-  useEffect(() => {
-    let theme = localStorage.getItem("Theme");
-    if (theme === "Dark") {
-      setDarkTheme(true);
-    }
-  }, []);
-
-  // Deuxième useEffect : Appliquer les changements et sauvegarder
   useEffect(() => {
     localStorage.setItem("Theme", isDarkTheme ? "Dark" : "Light");
     document.body.classList.toggle("dark-theme", isDarkTheme);
