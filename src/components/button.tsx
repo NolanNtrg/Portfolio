@@ -6,6 +6,7 @@ type ButtonProps = {
   submit?: boolean;
   icon?: string;
   small?: boolean;
+  onClick?: () => void;
 };
 
 export function Button({
@@ -16,10 +17,11 @@ export function Button({
   submit = false,
   icon = "",
   small = false,
+  onClick,
 }: ButtonProps) {
   const baseStyles = `
     font-ibm font-semibold no-underline border-2 rounded-sm transition-all duration-300 ease-in-out flex items-center gap-2 cursor-pointer
-      ${full ? "bg-(--background-color-items) text-(--color-text) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text) hover:bg-(--background-color-items)"}
+      ${full ? "bg-(--background-color-items) text-(--color-text-contrasted) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text-contrasted) hover:bg-(--background-color-items)"}
       ${small ? "px-3 py-1.5 text-xs" : "px-6 py-3 text-[0.9rem]"}
       transition-all duration-300 ease-in-out hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]}   
   `;
@@ -38,7 +40,7 @@ export function Button({
     <button
       type={submit ? "submit" : "button"}
       className={baseStyles}
-      onClick={() => alert("Click")}
+      onClick={onClick}
     >
       {icon && <i className={`fa-solid ${icon}`}></i>}
       {title}

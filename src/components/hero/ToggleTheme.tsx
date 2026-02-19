@@ -22,7 +22,7 @@ const ThemeToggle = () => {
 
   return (
     <div className="flex items-center gap-2">
-      <i className="fa-solid fa-sun text-xl"></i>
+      <i className="fa-solid fa-sun text-xl text-(--color-text)"></i>
 
       {/* Le Switch */}
       <label className="relative inline-flex items-center cursor-pointer">
@@ -40,7 +40,7 @@ const ThemeToggle = () => {
           after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
         ></div>
       </label>
-      <i className="fa-solid fa-moon text-xl"></i>
+      <i className="fa-solid fa-moon text-xl text-(--color-text)"></i>
     </div>
   );
 };

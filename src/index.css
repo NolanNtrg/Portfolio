@@ -5,8 +5,9 @@
   --background-color: #abaecd85;
   --background-color-items: black;
   --color-name: #1a1a1a;
-  --color-animations: #555;
-  --color-text: rgb(237, 237, 237);
+  --color-subtext: #555;
+  --color-text-contrasted: rgb(237, 237, 237);
+  --color-text: rgb(0, 0, 0);
   --green: var(--color-green-600);
 }
 
@@ -14,8 +15,9 @@
   --background-color: #09090bf5;
   --background-color-items: #eaeaea;
   --color-name: #c4c4c4;
-  --color-animations: #a1a1aa;
-  --color-text: rgb(0, 0, 0);
+  --color-subtext: #a1a1aa;
+  --color-text-contrasted: rgb(0, 0, 0);
+  --color-text: rgb(237, 237, 237);
   --green: var(--color-green-600);
 }
 
