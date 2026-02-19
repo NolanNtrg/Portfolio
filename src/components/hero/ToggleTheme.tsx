@@ -28,7 +28,7 @@ const ThemeToggle = () => {
           dark:bg-gray-700 peer-checked:after:translate-x-full 
           after:content-[''] after:absolute after:top-0.5 after:left-0.5 
           after:bg-white after:border-gray-300 after:border after:rounded-full 
-          after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+          after:h-5 after:w-5 after:transition-all peer-checked:bg-green-400"
         ></div>
       </label>
       <i className="fa-solid fa-moon text-xl text-(--color-text)"></i>
