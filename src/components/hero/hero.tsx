@@ -1,4 +1,4 @@
-import { MainInfo } from "./MainInfo";
+import { MainInfo } from "./MainInfo.tsx";
 
 export function Hero() {
   return (

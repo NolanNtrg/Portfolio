@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "../Button";
-import type { Project } from "./Screen";
+import { Button } from "../Button.tsx";
+import type { Project } from "./Screen.tsx";
 
 export function ProjectsContent({
   closeModal,
@@ -39,7 +39,7 @@ export function ProjectsContent({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {project.images &&
-                project.images.map((image, index) => (
+                project.images.map((image: string, index: number) => (
                   <div
                     key={index}
                     className="h-72 rounded-md overflow-hidden w-fit"
@@ -58,7 +58,7 @@ export function ProjectsContent({
                 {t("projectsContent.keyPointsTitle")}
               </h3>
               <ul className="list-disc list-inside space-y-2 text-(--color-text) marker:text-(--green)">
-                {project.keyPoints.map((point, index) => (
+                {project.keyPoints.map((point: string, index: number) => (
                   <li
                     key={index}
                     dangerouslySetInnerHTML={{
@@ -74,12 +74,12 @@ export function ProjectsContent({
                 {t("projectsContent.technologiesTitle")}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {project.stack.map((stack) => (
+                {project.stack.map((tech: string) => (
                   <span
-                    key={stack}
+                    key={tech}
                     className="px-3 py-1 bg-gray-900 border border-gray-700 rounded-md text-sm text-gray-300"
                   >
-                    {stack}
+                    {tech}
                   </span>
                 ))}
               </div>

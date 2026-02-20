@@ -1,8 +1,8 @@
-import { CallToAction } from "./CallToAction";
-import { Description } from "./Description";
-import { HeroButtons } from "./HeroButtons";
-import { Name } from "./Name";
-import { Tag } from "./Tag";
+import { CallToAction } from "./CallToAction.tsx";
+import { Description } from "./Description.tsx";
+import { HeroButtons } from "./HeroButtons.tsx";
+import { Name } from "./Name.tsx";
+import { Tag } from "./Tag.tsx";
 
 export function MainInfo() {
   return (

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../Button";
+import { Button } from "../Button.tsx";
 
 export function HeroButtons() {
   const { t } = useTranslation();

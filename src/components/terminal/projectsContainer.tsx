@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ProjectsContent } from "./ProjectsContent";
+import { ProjectsContent } from "./ProjectsContent.tsx";
 import { createPortal } from "react-dom";
-import type { Project } from "./Screen";
+import type { Project } from "./Screen.tsx";
 
 export function ProjectsContainer({ project }: { project: Project }) {
   const [showModal, setShowModal] = useState(false);
@@ -23,12 +23,12 @@ export function ProjectsContainer({ project }: { project: Project }) {
         <div className="p-4">
           <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
           <div className="flex flex-wrap gap-2 mb-2">
-            {stack.map((stack) => (
+            {stack.map((tech: string) => (
               <span
-                key={stack}
+                key={tech}
                 className="text-[10px] px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700"
               >
-                {stack}
+                {tech}
               </span>
             ))}
           </div>
