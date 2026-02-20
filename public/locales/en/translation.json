@@ -10,7 +10,7 @@
     "sourceCode": "Source Code (GitHub)"
   },
   "callToAction": "▼ SCROLL TO LEARN MORE ▼",
-  "description": "Computer science student at IUT2 Grenoble",
+  "description": "Computer science student at UIT2 Grenoble",
   "heroButtons": {
     "cv": "See my resume",
     "contact": "Contact me"
@@ -26,9 +26,9 @@
       {
         "year": "2025 - 2026",
         "degree": "University Diploma of Technology in Computer Science - 2nd year",
-        "school": "IUT2, Grenoble",
+        "school": "UIT2, Grenoble",
         "description": [
-          "Course: Development of Communicating and Secure Applications",
+          "Major in Deployment of Communicating and Secure Applications",
           "Deployment and security of network infrastructures (Proxmox, nftables)",
           "Full-stack and DevOps projects (Docker, Git)",
           "Web development (PHP/Symfony, JavaScript)"
@@ -38,7 +38,7 @@
       {
         "year": "2023 - 2024",
         "degree": "University Diploma of Technology in Computer Science - 1st year",
-        "school": "IUT2, Grenoble",
+        "school": "UIT2, Grenoble",
         "description": [
           "Fundamentals of object-oriented programming (Java)",
           "Databases (SQL, PostgreSQL)",
@@ -49,11 +49,11 @@
       },
       {
         "year": "2021 - 2024",
-        "degree": "General Baccalaureate",
-        "school": "Lycée Jean Moulin, Albertville",
+        "degree": "High school Diploma",
+        "school": "Jean Moulin High School, Albertville",
         "description": [
-          "Mention: Very Good",
-          "Specialties: Mathematics, Physics-Chemistry"
+          "High honours",
+          "Majors in Mathematics and Physics-Chemistry"
         ],
         "status": "completed"
       }
@@ -82,7 +82,7 @@
       "<br>",
       "whoami",
       "> Nolan Notargiacomo",
-      "> Sophomore in computer science at IUT2 Grenoble",
+      "> Sophomore in computer science at UIT2 Grenoble",
       "> Major in Deployment of Communicating and Secure Applications",
       "<br>",
       "cat skills.txt",
@@ -100,7 +100,7 @@
         "stack": ["Java", "JavaFX", "HTML", "CSS"],
         "description": "Design and development of a desktop application for creating and managing basketball tournaments",
         "image": "/BracketBuddy/BracketBuddy.png",
-        "longDescription": "BracketBuddy is a desktop application developed as a team for the end-of-year project at IUT2. It allows users to create and manage basketball tournaments. The application features a user-friendly interface for creating teams, scheduling matches, managing venues, and tracking tournament progress with real-time generation of the tournament tree based on scores.",
+        "longDescription": "BracketBuddy is a desktop application developed as a team for the end-of-year project at UIT2. It allows users to create and manage basketball tournaments. The application features a user-friendly interface for creating teams, scheduling matches, managing venues and tracking tournament progress with real-time generation of the tournament tree based on scores.",
         "keyPoints": [
           "Data storage via a serialization mechanism",
           "Automatic handling of venue and event availability",
@@ -119,7 +119,7 @@
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
         "description": "Design and development of a web application aimed at easing the workload of family caregivers",
         "image": "/Entourage/Entourage.png",
-        "longDescription": "Entour'Âge is a collaborative platform dedicated to coordinating the circle of care around a dependent person. The application helps centralize essential information, organize daily interventions, and facilitate communication between family members and healthcare professionals. By structuring medical and logistical follow-up, the tool aims to significantly reduce the mental load on the primary caregiver while securing home care.",
+        "longDescription": "Entour'Âge is a collaborative platform dedicated to coordinating the circle of care around a dependent person. The application helps centralize essential information, organize daily interventions and facilitate communication between family members and healthcare professionals. By structuring medical and logistical follow-up, the tool aims to significantly reduce the mental load on the primary caregiver while securing home care.",
         "keyPoints": [
           "Shared calendar to synchronize medical appointments and caregiver visits",
           "Real-time tracking of the loved one's health status and daily needs",
@@ -134,10 +134,10 @@
         "stack": ["Proxmox", "Bash", "nftables", "SQL"],
         "description": "Design and implementation of a network infrastructure for a road traffic control service",
         "image": "/Infrastructure/lan.png",
-        "longDescription": "Group project consisting of implementing a complete infrastructure for a traffic control service (traffic lights). Security is a key element of this project, requiring the establishment of secure internal communication, DMZs, and a robust firewall. The infrastructure must be comprehensive: running multiple client/server machines, administrator workstations, several networks, and a wiki to ensure future management of the infrastructure.",
+        "longDescription": "Group project consisting of implementing a complete infrastructure for a traffic control service (traffic lights). Security is a key element of this project, requiring the establishment of secure internal communication, DMZs and a robust firewall. The infrastructure must be comprehensive: running multiple client/server machines, administrator workstations, several networks and a wiki to ensure future management of the infrastructure.",
         "keyPoints": [
           "Implementation of a Wiki to ensure infrastructure management",
-          "DNS server, DHCP, and internal routers",
+          "DNS server, DHCP and internal routers",
           "Multiple client/server VMs via Proxmox",
           "Adaptability across multiple OS and security enhancement"
         ]
@@ -161,7 +161,7 @@
         "stack": ["Java", "Spigot API", "Maven"],
         "description": "Development of plugins for multiplayer servers",
         "image": "/Plugins/plugins.jpg",
-        "longDescription": "I designed and developed several Java plugins in a personal capacity to enrich the gaming experience on Minecraft servers. This work involved using the Spigot/Paper API to manipulate game logic: creating custom commands, managing complex events (listeners), and data persistence.",
+        "longDescription": "I designed and developed several Java plugins in a personal capacity to enrich the gaming experience on Minecraft servers. This work involved using the Spigot/Paper API to manipulate game logic: creating custom commands, managing complex events (listeners) and data persistence.",
         "keyPoints": [
           "Creation of reactive systems for player actions (Events & Listeners)",
           "Implementation of advanced commands with access permission management",
