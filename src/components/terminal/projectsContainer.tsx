@@ -1,19 +1,11 @@
 import { useState } from "react";
 import { ProjectsContent } from "./projectsContent";
 import { createPortal } from "react-dom";
+import type { Project } from "./screen";
 
-export function ProjectsContainer({
-  image,
-  title,
-  tech,
-  description,
-}: {
-  image: string;
-  title: string;
-  tech: string[];
-  description: string;
-}) {
+export function ProjectsContainer({ project }: { project: Project }) {
   const [showModal, setShowModal] = useState(false);
+  const { image, title, stack, description } = project;
 
   return (
     <>
@@ -31,8 +23,11 @@ export function ProjectsContainer({
         <div className="p-4">
           <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
           <div className="flex flex-wrap gap-2 mb-2">
-            {tech.map((tech) => (
-              <span className="text-[10px] px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700">
+            {stack.map((tech) => (
+              <span
+                key={tech}
+                className="text-[10px] px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700"
+              >
                 {tech}
               </span>
             ))}
@@ -42,7 +37,10 @@ export function ProjectsContainer({
       </button>
       {showModal &&
         createPortal(
-          <ProjectsContent closeModal={() => setShowModal(false)} />,
+          <ProjectsContent
+            closeModal={() => setShowModal(false)}
+            project={project}
+          />,
           document.body,
         )}
     </>

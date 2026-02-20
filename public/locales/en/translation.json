@@ -3,10 +3,6 @@
     "title": "Super Project Name",
     "description": "Here is a detailed description of the project. I explain here the initial context, the problem encountered by the client or the users, and the technical approach that I adopted to carry out this realization from A to Z.",
     "keyPointsTitle": "Key Points & Features",
-    "architecture": "<strong>Architecture:</strong> Implementation of a clean and scalable architecture.",
-    "performance": "<strong>Performance:</strong> Optimization of loading time and API requests.",
-    "security": "<strong>Security:</strong> Implementation of a robust authentication system.",
-    "responsive": "<strong>Responsive:</strong> 100% adaptable design on mobile, tablet and desktop.",
     "technologiesTitle": "Technologies Used",
     "visitSite": "Visit the site ↗",
     "sourceCode": "Source Code (GitHub)"
@@ -100,31 +96,101 @@
         "title": "BracketBuddy",
         "stack": ["Java", "JavaFX", "HTML", "CSS"],
         "description": "Design and development of a platform for creating and managing basketball tournaments",
-        "image": "/BracketBuddy.png"
+        "image": "/BracketBuddy.png",
+        "longDescription": "BracketBuddy is a desktop application developed for the IUT2 programming project. It allows users to create and manage basketball tournaments. The application features a user-friendly interface for creating teams, scheduling matches, and tracking tournament progress with real-time updates of the tournament bracket.",
+        "keyPoints": [
+          "Implementation of a clean and scalable architecture.",
+          "Optimization of loading time and API requests.",
+          "Implementation of a robust authentication system.",
+          "100% adaptable design on mobile, tablet and desktop."
+        ],
+        "technologies": ["Java", "JavaFX", "CSS", "SceneBuilder", "SQLite"],
+        "siteUrl": "#",
+        "sourceCodeUrl": "#",
+        "images": [
+          "/BracketBuddy.png",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+        ]
       },
       "2": {
         "title": "Entour'Âge",
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
         "description": "End-to-end encrypted messaging. HD video calls and secure sharing.",
-        "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+        "longDescription": "A secure messaging application with a focus on privacy. It offers end-to-end encryption for all communications, ensuring that only the sender and receiver can read the messages. It also supports high-definition video calls and secure file sharing.",
+        "keyPoints": [
+          "End-to-end encryption for all messages and files.",
+          "High-definition video and voice calls.",
+          "Cross-platform support (desktop and web).",
+          "Decentralized identity management."
+        ],
+        "technologies": ["Python", "Flask", "SQLAlchemy", "JavaScript", "WebSockets"],
+        "siteUrl": "#",
+        "sourceCodeUrl": "#",
+        "images": [
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+        ]
       },
       "3": {
         "title": "Econocom Website",
         "stack": ["Docker", "Kubernetes"],
         "description": "Design and development of a fictional website for the Econocom company",
-        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
+        "longDescription": "A fictional corporate website for Econocom, designed to showcase modern web technologies and a professional design. The project involved creating a responsive and performant website with a focus on user experience and brand identity.",
+        "keyPoints": [
+          "Fully responsive design for all devices.",
+          "Optimized for performance and fast loading times.",
+          "CMS integration for easy content management.",
+          "SEO best practices implemented."
+        ],
+        "technologies": ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+        "siteUrl": "#",
+        "sourceCodeUrl": "#",
+        "images": [
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+        ]
       },
       "4": {
         "title": "AI TaskBot",
         "stack": ["Python", "TensorFlow"],
         "description": "Intelligent assistant for task management. Machine learning and NLP.",
-        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+        "longDescription": "An intelligent task management assistant that uses machine learning and natural language processing to help users organize their tasks. The AI can understand natural language commands, prioritize tasks, and provide smart suggestions.",
+        "keyPoints": [
+          "Natural Language Processing for task creation.",
+          "Machine learning for task prioritization.",
+          "Integration with calendars and other productivity tools.",
+          "Personalized recommendations and insights."
+        ],
+        "technologies": ["Python", "TensorFlow", "NLTK", "FastAPI"],
+        "siteUrl": "#",
+        "sourceCodeUrl": "#",
+        "images": [
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+        ]
       },
       "5": {
         "title": "E-Commerce Platform",
         "stack": ["Vue.js", "PostgreSQL"],
         "description": "Complete online sales platform. Secure payment and stock management.",
-        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+        "longDescription": "A full-featured e-commerce platform with secure payment processing, inventory management, and a customer-friendly interface. The platform is designed to be scalable and can handle a large number of products and transactions.",
+        "keyPoints": [
+          "Secure payment gateway integration.",
+          "Advanced inventory and order management.",
+          "Customer accounts and order history.",
+          "Product search and filtering capabilities."
+        ],
+        "technologies": ["Vue.js", "Express", "Node.js", "PostgreSQL", "Stripe API"],
+        "siteUrl": "#",
+        "sourceCodeUrl": "#",
+        "images": [
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+        ]
       }
     },
     "header": {

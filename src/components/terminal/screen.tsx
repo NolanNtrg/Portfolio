@@ -2,6 +2,19 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ProjectsContainer } from "./projectsContainer";
 
+export type Project = {
+  title: string;
+  stack: string[];
+  description: string;
+  image: string;
+  longDescription: string;
+  keyPoints: string[];
+  technologies: string[];
+  siteUrl: string;
+  sourceCodeUrl: string;
+  images: string[];
+};
+
 export function Screen() {
   const { t } = useTranslation();
   const trackRef = useRef<HTMLDivElement>(null);
@@ -20,7 +33,9 @@ export function Screen() {
       `<span class="bg-green-400/15 px-1 text-white rounded-sm">${txt}</span>`,
   };
 
-  const rawScenario = t("terminal.scenario", { returnObjects: true }) as string[];
+  const rawScenario = t("terminal.scenario", {
+    returnObjects: true,
+  }) as string[];
   const scenario = [
     style.comment(rawScenario[0]),
     style.ok(rawScenario[1]),
@@ -42,10 +57,9 @@ export function Screen() {
     `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">${rawScenario[17]}</span>`,
   ];
 
-  const projectsData = t("terminal.projectsData", { returnObjects: true }) as Record<
-    string,
-    { title: string; stack: string[]; description: string; image: string }
-  >;
+  const projectsData = t("terminal.projectsData", {
+    returnObjects: true,
+  }) as Record<string, Project>;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,8 +101,8 @@ export function Screen() {
     return () => clearInterval(timer);
   }, []);
 
-  const textPhaseEnd = 0.45;
-  const projectsScrollStart = 0.5;
+  const textPhaseEnd = 0.25;
+  const projectsScrollStart = 0.3;
 
   const textProgress = Math.min(globalProgress / textPhaseEnd, 1);
   const visibleLines = Math.floor(textProgress * (scenario.length + 1));
@@ -123,7 +137,7 @@ export function Screen() {
                     : "opacity-100"
                 }`}
               >
-                <div className="text-sm md:text-base text-green-400">
+                <div className="text-xs md:text-base text-green-400">
                   {scenario.map((line, i) => (
                     <div
                       key={i}
@@ -162,13 +176,7 @@ export function Screen() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                   {Object.values(projectsData).map((project, index) => (
-                    <ProjectsContainer
-                      key={index}
-                      image={project.image}
-                      title={project.title}
-                      tech={project.stack}
-                      description={project.description}
-                    />
+                    <ProjectsContainer key={index} project={project} />
                   ))}
                 </div>
               </div>
