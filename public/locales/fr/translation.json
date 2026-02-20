@@ -1,4 +1,8 @@
 {
+  "footer": {
+    "copyright": "Nolan Notargiacomo. Tous droits réservés.",
+    "update": "Dernière mise à jour le 20 février 2026."
+  },
   "projectsContent": {
     "keyPointsTitle": "Points Clés & Fonctionnalités",
     "technologiesTitle": "Technologies Utilisées",
@@ -98,13 +102,11 @@
         "image": "/BracketBuddy/BracketBuddy.png",
         "longDescription": "BracketBuddy est une application lourde développée en équipe pour le projet de fin d'année de l'IUT2. Elle permet aux utilisateurs de créer et de gérer des tournois de basket. L'application dispose d'une interface conviviale pour créer des équipes, planifier des matchs, gérer les lieux et suivre la progression du tournoi avec une génération de l'arbre du tournoi en temps réel en fonction des scores.",
         "keyPoints": [
-          "Stockage des données via un persisteur",
+          "Stockage des données via uun mécanisme de sérialisation",
           "Prise en charge automatique des disponibilités des lieux et des événements",
           "Génération automatique des arbres de tournois",
-          ""
+          "Gestion facile et centralisée des scores"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
         "images": [
           "/BracketBuddy/locations.png",
           "/BracketBuddy/teams.png",
@@ -117,73 +119,56 @@
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
         "description": "Conception et développement d'une application web visant à soulager la charge de travail des aidants familiaux",
         "image": "/Entourage/Entourage.png",
-        "longDescription": "Une application de messagerie sécurisée axée sur la confidentialité. Elle offre un chiffrement de bout en bout pour toutes les communications, garantissant que seuls l'expéditeur et le destinataire peuvent lire les messages. Elle prend également en charge les appels vidéo haute définition et le partage de fichiers sécurisé.",
+        "longDescription": "Entour'Âge est une plateforme collaborative dédiée à la coordination du cercle de soins autour d'une personne dépendante. L'application permet de centraliser les informations essentielles, d'organiser les interventions quotidiennes et de faciliter la communication entre les membres de la famille et les professionnels de santé. En structurant le suivi médical et logistique, l'outil vise à réduire significativement la charge mentale de l'aidant principal tout en sécurisant le maintien à domicile.",
         "keyPoints": [
-          "Chiffrement de bout en bout pour tous les messages et fichiers.",
-          "Appels vocaux et vidéo haute définition.",
-          "Support multiplateforme (bureau et web).",
-          "Gestion décentralisée de l'identité."
+          "Agenda partagé pour synchroniser les rendez-vous médicaux et les passages des auxiliaires",
+          "Suivi en temps réel de l'état de santé et des besoins quotidiens du proche",
+          "Espace d'échange sécurisé permettant de briser l'isolement de l'aidant familial",
+          "Centralisation des dossiers administratifs et des contacts d'urgence accessibles en un clic"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": []
+        "siteUrl": "https://www.entoutage.fr",
+        "images": ["/Entourage/creation.png", "Entourage/agenda.png"]
       },
       "3": {
         "title": "Infrastructure réseau",
-        "stack": ["Docker", "Kubernetes"],
-        "description": "Conception et développement d'un site web fictif pour l'entreprise Econocom",
-        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
-        "longDescription": "Un site d'entreprise fictif pour Econocom, conçu pour présenter des technologies web modernes et un design professionnel. Le projet consistait à créer un site web réactif et performant, axé sur l'expérience utilisateur et l'identité de la marque.",
+        "stack": ["Proxmox", "Bash", "nftables", "SQL"],
+        "description": "Conception et mise en place d'une infrastructure réseau pour un service de régulation routière",
+        "image": "/Infrastructure/lan.png",
+        "longDescription": "Projet de groupe consistant à mettre en place une infrastructure complète pour un service de régulation du traffic (feux de signalisations). La sécurité de ce projet est un élément clé, qui nécessite la mise en place d'une communication interne sécurisée, de DMZ et d'un pare feu solide. L'infrastructure doit être complète : faire tourner de multiples machines clients/serveurs, des postes administrateurs, plusieurs réseaux et un wiki pour assurer la gestion future de l'infrastructure.",
         "keyPoints": [
-          "Conception entièrement réactive pour tous les appareils.",
-          "Optimisé pour la performance et des temps de chargement rapides.",
-          "Intégration CMS pour une gestion facile du contenu.",
-          "Mise en œuvre des meilleures pratiques de référencement."
-        ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+          "Mise en place d'un Wiki pour assurer la gestion de l'infrastructure",
+          "Serveur DNS, DHCP et routeurs internes",
+          "Multiples VM clients/serveurs via Proxmox",
+          "Adaptabilité sur plusieurs OS et sécurisation"
         ]
       },
       "4": {
         "title": "Messagerie en ligne",
-        "stack": ["Python", "Flask"],
-        "description": "Assistant intelligent pour la gestion de tâches. Machine learning et NLP.",
-        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-        "longDescription": "Un assistant de gestion de tâches intelligent qui utilise l'apprentissage automatique et le traitement du langage naturel pour aider les utilisateurs à organiser leurs tâches. L'IA peut comprendre les commandes en langage naturel, hiérarchiser les tâches et fournir des suggestions intelligentes.",
+        "stack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+        "description": "Développement d'une application de messagerie instantanée minimaliste permettant des échanges en temps réel",
+        "image": "/Messagerie/flask.png",
+        "longDescription": "Projet personnel conçu pour explorer le développement d'applications web dynamiques avec le framework Flask et lew websockets. L'application propose une interface simple et intuitive où les utilisateurs peuvent rejoindre des salons de discussion (chatrooms) pour échanger instantanément. Le projet comporte une gestion des sessions utilisateurs dans une architecture légère pour un déploiement rapide.",
         "keyPoints": [
-          "Traitement du langage naturel pour la création de tâches.",
-          "Apprentissage automatique pour la hiérarchisation des tâches.",
-          "Intégration avec les calendriers et autres outils de productivité.",
-          "Recommandations et informations personnalisées."
+          "Système de salons (Chatrooms) pour organiser les conversations",
+          "Gestion des sessions et des identifiants utilisateurs via Flask et WebSockets",
+          "Architecture légère optimisée pour l'hébergement sur PythonAnywhere"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-        ]
+        "siteUrl": "https://nolanntrg.pythonanywhere.com",
+        "images": ["/Messagerie/enter.png", "/Messagerie/chatroom.png"]
       },
       "5": {
         "title": "Plugins Minecraft",
-        "stack": ["Java"],
-        "description": "Plateforme complète de vente en ligne. Paiement sécurisé et gestion stock.",
-        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-        "longDescription": "Une plateforme de commerce électronique complète avec traitement sécurisé des paiements, gestion des stocks et une interface conviviale. La plateforme est conçue pour être évolutive et peut gérer un grand nombre de produits et de transactions.",
+        "stack": ["Java", "Spigot API", "Maven"],
+        "description": "Développement plugins pour serveurs multijoueurs",
+        "image": "/Plugins/plugins.jpg",
+        "longDescription": "J'ai conçu et développé plusieurs plugins Java dans un cadre personnel pour enrichir l'expérience de jeu sur des serveurs Minecraft. Ce travail a impliqué l'utilisation de l'API Spigot/Paper pour manipuler la logique du jeu : création de commandes personnalisées, gestion d'événements complexes (listeners), et persistance des données.",
         "keyPoints": [
-          "Intégration d'une passerelle de paiement sécurisée.",
-          "Gestion avancée des stocks et des commandes.",
-          "Comptes clients et historique des commandes.",
-          "Capacités de recherche et de filtrage de produits."
+          "Création de systèmes réactifs aux actions des joueurs (Events & Listeners)",
+          "Implémentation de commandes avancées avec gestion des droits d'accès",
+          "Utilisation de fichiers de configuration YAML et stockage de données persistantes",
+          "Gestion des tâches asynchrones pour préserver les performances du serveur"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-        ]
+        "sourceCodeUrl": "https://github.com/NolanNtrg/minecraft-plugins"
       }
     },
     "header": {

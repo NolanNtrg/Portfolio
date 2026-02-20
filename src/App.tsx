@@ -1,6 +1,7 @@
 import { Contact } from "./components/contact/contact";
 import { EducationHeader } from "./components/education/educationHeader";
 import { EducationTimeline } from "./components/education/educationTimeline";
+import { Footer } from "./components/footer/footer";
 import { Hero } from "./components/hero/hero";
 import { Navbar } from "./components/hero/navbar";
 import { Screen } from "./components/terminal/screen";
@@ -15,6 +16,7 @@ function App() {
       <EducationHeader />
       <EducationTimeline />
       <Contact />
+      <Footer />
     </div>
   );
 }

@@ -9,9 +9,9 @@ export type Project = {
   image: string;
   longDescription: string;
   keyPoints: string[];
-  siteUrl: string;
-  sourceCodeUrl: string;
-  images: string[];
+  siteUrl?: string;
+  sourceCodeUrl?: string;
+  images?: string[];
 };
 
 export function Screen() {

@@ -1,4 +1,8 @@
 {
+  "footer": {
+    "copyright": "Nolan Notargiacomo. All rights reserved.",
+    "update": "Last updated: February 20, 2026."
+  },
   "projectsContent": {
     "keyPointsTitle": "Key Points & Features",
     "technologiesTitle": "Technologies Used",
@@ -94,17 +98,15 @@
       "1": {
         "title": "BracketBuddy",
         "stack": ["Java", "JavaFX", "HTML", "CSS"],
-        "description": "Design and development of a platform for creating and managing basketball tournaments",
+        "description": "Design and development of a desktop application for creating and managing basketball tournaments",
         "image": "/BracketBuddy/BracketBuddy.png",
-        "longDescription": "BracketBuddy is a desktop application developed for the IUT2 programming project. It allows users to create and manage basketball tournaments. The application features a user-friendly interface for creating teams, scheduling matches, and tracking tournament progress with real-time updates of the tournament bracket.",
+        "longDescription": "BracketBuddy is a desktop application developed as a team for the end-of-year project at IUT2. It allows users to create and manage basketball tournaments. The application features a user-friendly interface for creating teams, scheduling matches, managing venues, and tracking tournament progress with real-time generation of the tournament tree based on scores.",
         "keyPoints": [
-          "Implementation of a clean and scalable architecture.",
-          "Optimization of loading time and API requests.",
-          "Implementation of a robust authentication system.",
-          "100% adaptable design on mobile, tablet and desktop."
+          "Data storage via a serialization mechanism",
+          "Automatic handling of venue and event availability",
+          "Automatic generation of tournament trees",
+          "Easy and centralized score management"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
         "images": [
           "/BracketBuddy/locations.png",
           "/BracketBuddy/teams.png",
@@ -115,78 +117,58 @@
       "2": {
         "title": "Entour'Âge",
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
-        "description": "End-to-end encrypted messaging. HD video calls and secure sharing.",
+        "description": "Design and development of a web application aimed at easing the workload of family caregivers",
         "image": "/Entourage/Entourage.png",
-        "longDescription": "A secure messaging application with a focus on privacy. It offers end-to-end encryption for all communications, ensuring that only the sender and receiver can read the messages. It also supports high-definition video calls and secure file sharing.",
+        "longDescription": "Entour'Âge is a collaborative platform dedicated to coordinating the circle of care around a dependent person. The application helps centralize essential information, organize daily interventions, and facilitate communication between family members and healthcare professionals. By structuring medical and logistical follow-up, the tool aims to significantly reduce the mental load on the primary caregiver while securing home care.",
         "keyPoints": [
-          "End-to-end encryption for all messages and files.",
-          "High-definition video and voice calls.",
-          "Cross-platform support (desktop and web).",
-          "Decentralized identity management."
+          "Shared calendar to synchronize medical appointments and caregiver visits",
+          "Real-time tracking of the loved one's health status and daily needs",
+          "Secure communication space to break the isolation of the family caregiver",
+          "Centralization of administrative records and emergency contacts accessible in one click"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-        ]
+        "siteUrl": "https://www.entoutage.fr",
+        "images": ["/Entourage/creation.png", "Entourage/agenda.png"]
       },
       "3": {
-        "title": "Econocom Website",
-        "stack": ["Docker", "Kubernetes"],
-        "description": "Design and development of a fictional website for the Econocom company",
-        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
-        "longDescription": "A fictional corporate website for Econocom, designed to showcase modern web technologies and a professional design. The project involved creating a responsive and performant website with a focus on user experience and brand identity.",
+        "title": "Network Infrastructure",
+        "stack": ["Proxmox", "Bash", "nftables", "SQL"],
+        "description": "Design and implementation of a network infrastructure for a road traffic control service",
+        "image": "/Infrastructure/lan.png",
+        "longDescription": "Group project consisting of implementing a complete infrastructure for a traffic control service (traffic lights). Security is a key element of this project, requiring the establishment of secure internal communication, DMZs, and a robust firewall. The infrastructure must be comprehensive: running multiple client/server machines, administrator workstations, several networks, and a wiki to ensure future management of the infrastructure.",
         "keyPoints": [
-          "Fully responsive design for all devices.",
-          "Optimized for performance and fast loading times.",
-          "CMS integration for easy content management.",
-          "SEO best practices implemented."
-        ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+          "Implementation of a Wiki to ensure infrastructure management",
+          "DNS server, DHCP, and internal routers",
+          "Multiple client/server VMs via Proxmox",
+          "Adaptability across multiple OS and security enhancement"
         ]
       },
       "4": {
-        "title": "AI TaskBot",
-        "stack": ["Python", "TensorFlow"],
-        "description": "Intelligent assistant for task management. Machine learning and NLP.",
-        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-        "longDescription": "An intelligent task management assistant that uses machine learning and natural language processing to help users organize their tasks. The AI can understand natural language commands, prioritize tasks, and provide smart suggestions.",
+        "title": "Online Chat Application",
+        "stack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+        "description": "Development of a minimalist instant messaging application for real-time communication",
+        "image": "/Messagerie/flask.png",
+        "longDescription": "Personal project designed to explore the development of dynamic web applications with the Flask framework and WebSockets. The application offers a simple and intuitive interface where users can join chat rooms to communicate instantly. The project includes user session management in a lightweight architecture for rapid deployment.",
         "keyPoints": [
-          "Natural Language Processing for task creation.",
-          "Machine learning for task prioritization.",
-          "Integration with calendars and other productivity tools.",
-          "Personalized recommendations and insights."
+          "Chat room system to organize conversations",
+          "User session and ID management via Flask and WebSockets",
+          "Lightweight architecture optimized for hosting on PythonAnywhere"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-        ]
+        "siteUrl": "https://nolanntrg.pythonanywhere.com",
+        "images": ["/Messagerie/enter.png", "/Messagerie/chatroom.png"]
       },
       "5": {
-        "title": "E-Commerce Platform",
-        "stack": ["Vue.js", "PostgreSQL"],
-        "description": "Complete online sales platform. Secure payment and stock management.",
-        "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-        "longDescription": "A full-featured e-commerce platform with secure payment processing, inventory management, and a customer-friendly interface. The platform is designed to be scalable and can handle a large number of products and transactions.",
+        "title": "Minecraft Plugins",
+        "stack": ["Java", "Spigot API", "Maven"],
+        "description": "Development of plugins for multiplayer servers",
+        "image": "/Plugins/plugins.jpg",
+        "longDescription": "I designed and developed several Java plugins in a personal capacity to enrich the gaming experience on Minecraft servers. This work involved using the Spigot/Paper API to manipulate game logic: creating custom commands, managing complex events (listeners), and data persistence.",
         "keyPoints": [
-          "Secure payment gateway integration.",
-          "Advanced inventory and order management.",
-          "Customer accounts and order history.",
-          "Product search and filtering capabilities."
+          "Creation of reactive systems for player actions (Events & Listeners)",
+          "Implementation of advanced commands with access permission management",
+          "Use of YAML configuration files and persistent data storage",
+          "Management of asynchronous tasks to preserve server performance"
         ],
-        "siteUrl": "#",
-        "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-        ]
+        "sourceCodeUrl": "https://github.com/NolanNtrg/minecraft-plugins"
       }
     },
     "header": {

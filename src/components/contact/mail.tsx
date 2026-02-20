@@ -4,7 +4,7 @@ export function Mail() {
   const { t } = useTranslation();
   return (
     <form
-      action="https://formsubmit.co/notargiacomo.nolan07@gmail.com"
+      action="https://formsubmit.co/7a9a6e68336a10f2a94150711362eab2"
       method="POST"
       className="grid gap-5 text-left md:w-[60vw] w-[90vw]"
     >
@@ -12,7 +12,7 @@ export function Mail() {
       <input
         type="hidden"
         name="_next"
-        value="https://nolan-notargiacomo.netlify.app/"
+        value="https://nolan-notargiacomo.vercel.app/"
       />
       <input
         type="hidden"

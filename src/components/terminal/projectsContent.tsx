@@ -38,18 +38,19 @@ export function ProjectsContent({
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              {project.images.map((image, index) => (
-                <div
-                  key={index}
-                  className="h-48 md:h-56 bg-gray-800 rounded-md overflow-hidden border border-gray-700"
-                >
-                  <img
-                    src={image}
-                    alt={`Project screenshot ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+              {project.images &&
+                project.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="h-72 rounded-md overflow-hidden w-fit"
+                  >
+                    <img
+                      src={image}
+                      alt={`Project screenshot ${index + 1}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ))}
             </div>
 
             <div className="mb-8">
@@ -85,20 +86,24 @@ export function ProjectsContent({
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-gray-800">
-              <a
-                href={project.siteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button title={t("projectsContent.visitSite")} />
-              </a>
-              <a
-                href={project.sourceCodeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button title={t("projectsContent.sourceCode")} />
-              </a>
+              {project.siteUrl && (
+                <a
+                  href={project.siteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button title={t("projectsContent.visitSite")} />
+                </a>
+              )}
+              {project.sourceCodeUrl && (
+                <a
+                  href={project.sourceCodeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button title={t("projectsContent.sourceCode")} />
+                </a>
+              )}
             </div>
           </div>
         </div>
