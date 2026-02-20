@@ -22,7 +22,7 @@
   --color-subtext: #a1a1aa;
   --color-text-contrasted: rgb(0, 0, 0);
   --color-text: rgb(237, 237, 237);
-  --green: var(--color-green-600);
+  --green: var(--color-green-400);
 }
 
 @media (prefers-color-scheme: dark) {

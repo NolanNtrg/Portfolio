@@ -17,16 +17,16 @@ export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
         onClick={closeModal}
         className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
       ></div>
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-11/12 max-w-4xl max-h-[85vh] bg-[var(--background-navbar)] rounded-lg shadow-2xl border border-gray-700 text-white overflow-hidden">
+      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-11/12 max-w-4xl max-h-[85vh] bg-(--background-navbar) rounded-lg shadow-2xl border border-gray-700 text-white overflow-hidden">
         <div className="absolute top-4 right-4 z-20">
           <Button title="X" small={true} onClick={closeModal} full={true} />
         </div>
         <div className="overflow-y-auto custom-scrollbar p-6 md:p-10 max-h-[85vh]">
           <div className="mt-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-400 md:p-0 pr-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-(--green) md:p-0 pr-10">
               {t("projectsContent.title")}
             </h2>
-            <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
+            <p className="text-(--color-text) mb-8 leading-relaxed text-sm md:text-base">
               {t("projectsContent.description")}
             </p>
 
@@ -48,10 +48,10 @@ export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
             </div>
 
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">
+              <h3 className="text-xl font-semibold mb-4 text-(--color-name) border-b border-gray-700 pb-2">
                 {t("projectsContent.keyPointsTitle")}
               </h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-300 marker:text-green-400">
+              <ul className="list-disc list-inside space-y-2 text-(--color-text) marker:text-(--green)">
                 <li
                   dangerouslySetInnerHTML={{
                     __html: t("projectsContent.architecture"),
@@ -76,7 +76,7 @@ export function ProjectsContent({ closeModal }: { closeModal: () => void }) {
             </div>
 
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-white border-b border-gray-700 pb-2">
+              <h3 className="text-xl font-semibold mb-4 text-(--color-name) border-b border-gray-700 pb-2">
                 {t("projectsContent.technologiesTitle")}
               </h3>
               <div className="flex flex-wrap gap-2">

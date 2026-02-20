@@ -63,7 +63,7 @@
   },
   "contact": {
     "title": "ME CONTACTER",
-    "subtitle": "Une proposition ou une question ? Envoyez-moi un message.",
+    "subtitle": "Une proposition ou une question ? Envoyez moi un message",
     "form": {
       "name": "Nom",
       "namePlaceholder": "John Doe",
