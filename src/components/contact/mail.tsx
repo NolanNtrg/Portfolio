@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../button";
 
 export function Mail() {
   const { t } = useTranslation();
