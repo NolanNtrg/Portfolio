@@ -23,12 +23,12 @@ export function ProjectsContainer({ project }: { project: Project }) {
         <div className="p-4">
           <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
           <div className="flex flex-wrap gap-2 mb-2">
-            {stack.map((tech) => (
+            {stack.map((stack) => (
               <span
-                key={tech}
+                key={stack}
                 className="text-[10px] px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700"
               >
-                {tech}
+                {stack}
               </span>
             ))}
           </div>

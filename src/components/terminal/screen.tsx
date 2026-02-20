@@ -9,7 +9,6 @@ export type Project = {
   image: string;
   longDescription: string;
   keyPoints: string[];
-  technologies: string[];
   siteUrl: string;
   sourceCodeUrl: string;
   images: string[];
@@ -54,7 +53,6 @@ export function Screen() {
     style.high(rawScenario[14]),
     rawScenario[15],
     rawScenario[16],
-    `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">${rawScenario[17]}</span>`,
   ];
 
   const projectsData = t("terminal.projectsData", {

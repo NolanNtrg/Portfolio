@@ -1,4 +1,4 @@
-import { Mail } from "./components/contact/mail";
+import { Contact } from "./components/contact/contact";
 import { EducationHeader } from "./components/education/educationHeader";
 import { EducationTimeline } from "./components/education/educationTimeline";
 import { Hero } from "./components/hero/hero";
@@ -14,7 +14,7 @@ function App() {
       <Screen />
       <EducationHeader />
       <EducationTimeline />
-      <Mail />
+      <Contact />
     </div>
   );
 }

@@ -1,7 +1,5 @@
 {
   "projectsContent": {
-    "title": "Nom du Super Projet",
-    "description": "Voici une description détaillée du projet. J'explique ici le contexte initial, la problématique rencontrée par le client ou les utilisateurs, et l'approche technique que j'ai adoptée pour mener à bien cette réalisation de A à Z.",
     "keyPointsTitle": "Points Clés & Fonctionnalités",
     "technologiesTitle": "Technologies Utilisées",
     "visitSite": "Visiter le site ↗",
@@ -70,6 +68,9 @@
       "submit": "Envoyer le message ➤"
     }
   },
+  "social": {
+    "title": "Mes réseaux"
+  },
   "terminal": {
     "scenario": [
       "# Booting system...",
@@ -77,46 +78,45 @@
       "<br>",
       "whoami",
       "> Nolan Notargiacomo",
-      "> Étudiant en BUT Informatique à l'IUT2 de Grenoble",
-      "> Parcours Développement d'applications Communicantes et Sécurisées",
+      "> Étudiant de 2ème année en BUT Informatique à l'IUT2 de Grenoble",
+      "> Parcours Déploiement d'applications Communicantes et Sécurisées",
       "<br>",
       "cat skills.txt",
-      "Frontend: React, Vue.js, Flutter",
-      "Backend: Node.js, Python, Java",
-      "DevOps: Docker, Git",
+      "Frontend: HTML/CSS, React, JavaScript",
+      "Backend: Java, PHP, C++",
+      "DevOps: Docker, Git, Proxmox",
       "<br>",
-      "./start_ui.sh",
+      "./projects_start.sh",
       "Chargement de l'interface...",
-      "████████████████ 100%",
-      "<br>",
-      "ls -la projects/"
+      "████████████████ 100%"
     ],
     "projectsData": {
       "1": {
         "title": "BracketBuddy",
         "stack": ["Java", "JavaFX", "HTML", "CSS"],
-        "description": "Conception et développement d'une plateforme de création et de gestion de tournois de basket",
-        "image": "/BracketBuddy.png",
-        "longDescription": "BracketBuddy est une application de bureau développée pour le projet de programation de l'IUT2. Elle permet aux utilisateurs de créer et de gérer des tournois de basket. L'application dispose d'une interface conviviale pour créer des équipes, planifier des matchs et suivre la progression du tournoi avec des mises à jour en temps réel du tableau du tournoi.",
+        "description": "Conception et développement d'une application lourde de création et de gestion de tournois de basket",
+        "image": "/BracketBuddy/BracketBuddy.png",
+        "longDescription": "BracketBuddy est une application lourde développée en équipe pour le projet de fin d'année de l'IUT2. Elle permet aux utilisateurs de créer et de gérer des tournois de basket. L'application dispose d'une interface conviviale pour créer des équipes, planifier des matchs, gérer les lieux et suivre la progression du tournoi avec une génération de l'arbre du tournoi en temps réel en fonction des scores.",
         "keyPoints": [
-          "Mise en place d'une architecture propre et scalable.",
-          "Optimisation du temps de chargement et des requêtes API.",
-          "Implémentation d'un système d'authentification robuste.",
-          "Design 100% adaptable sur mobile, tablette et desktop."
+          "Stockage des données via un persisteur",
+          "Prise en charge automatique des disponibilités des lieux et des événements",
+          "Génération automatique des arbres de tournois",
+          ""
         ],
-        "technologies": ["Java", "JavaFX", "CSS", "SceneBuilder", "SQLite"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
-          "/BracketBuddy.png",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+          "/BracketBuddy/locations.png",
+          "/BracketBuddy/teams.png",
+          "/BracketBuddy/tournaments.png",
+          "/BracketBuddy/tree.png"
         ]
       },
       "2": {
         "title": "Entour'Âge",
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
-        "description": "Messagerie chiffrée end-to-end. Appels vidéo HD et partage sécurisé.",
-        "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+        "description": "Conception et développement d'une application web visant à soulager la charge de travail des aidants familiaux",
+        "image": "/Entourage/Entourage.png",
         "longDescription": "Une application de messagerie sécurisée axée sur la confidentialité. Elle offre un chiffrement de bout en bout pour toutes les communications, garantissant que seuls l'expéditeur et le destinataire peuvent lire les messages. Elle prend également en charge les appels vidéo haute définition et le partage de fichiers sécurisé.",
         "keyPoints": [
           "Chiffrement de bout en bout pour tous les messages et fichiers.",
@@ -124,16 +124,12 @@
           "Support multiplateforme (bureau et web).",
           "Gestion décentralisée de l'identité."
         ],
-        "technologies": ["Python", "Flask", "SQLAlchemy", "JavaScript", "WebSockets"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
-        "images": [
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-        ]
+        "images": []
       },
       "3": {
-        "title": "Site web Econocom",
+        "title": "Infrastructure réseau",
         "stack": ["Docker", "Kubernetes"],
         "description": "Conception et développement d'un site web fictif pour l'entreprise Econocom",
         "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
@@ -144,7 +140,6 @@
           "Intégration CMS pour une gestion facile du contenu.",
           "Mise en œuvre des meilleures pratiques de référencement."
         ],
-        "technologies": ["React", "TypeScript", "Tailwind CSS", "Next.js"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
@@ -153,8 +148,8 @@
         ]
       },
       "4": {
-        "title": "AI TaskBot",
-        "stack": ["Python", "TensorFlow"],
+        "title": "Messagerie en ligne",
+        "stack": ["Python", "Flask"],
         "description": "Assistant intelligent pour la gestion de tâches. Machine learning et NLP.",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
         "longDescription": "Un assistant de gestion de tâches intelligent qui utilise l'apprentissage automatique et le traitement du langage naturel pour aider les utilisateurs à organiser leurs tâches. L'IA peut comprendre les commandes en langage naturel, hiérarchiser les tâches et fournir des suggestions intelligentes.",
@@ -164,7 +159,6 @@
           "Intégration avec les calendriers et autres outils de productivité.",
           "Recommandations et informations personnalisées."
         ],
-        "technologies": ["Python", "TensorFlow", "NLTK", "FastAPI"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
@@ -173,8 +167,8 @@
         ]
       },
       "5": {
-        "title": "E-Commerce Platform",
-        "stack": ["Vue.js", "PostgreSQL"],
+        "title": "Plugins Minecraft",
+        "stack": ["Java"],
         "description": "Plateforme complète de vente en ligne. Paiement sécurisé et gestion stock.",
         "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
         "longDescription": "Une plateforme de commerce électronique complète avec traitement sécurisé des paiements, gestion des stocks et une interface conviviale. La plateforme est conçue pour être évolutive et peut gérer un grand nombre de produits et de transactions.",
@@ -184,7 +178,6 @@
           "Comptes clients et historique des commandes.",
           "Capacités de recherche et de filtrage de produits."
         ],
-        "technologies": ["Vue.js", "Express", "Node.js", "PostgreSQL", "Stripe API"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [

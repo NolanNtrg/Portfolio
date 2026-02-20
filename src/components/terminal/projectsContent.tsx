@@ -24,7 +24,7 @@ export function ProjectsContent({
         onClick={closeModal}
         className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
       ></div>
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-11/12 max-w-4xl h-[80vh] bg-(--background-navbar) rounded-lg shadow-2xl border border-gray-700 text-white overflow-hidden">
+      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-11/12 max-w-4xl max-h-[80vh] bg-(--background-navbar) rounded-lg shadow-2xl border border-gray-700 text-white overflow-hidden">
         <div className="absolute top-4 right-4 z-20">
           <Button title="X" small={true} onClick={closeModal} full={true} />
         </div>
@@ -46,7 +46,7 @@ export function ProjectsContent({
                   <img
                     src={image}
                     alt={`Project screenshot ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
@@ -73,19 +73,23 @@ export function ProjectsContent({
                 {t("projectsContent.technologiesTitle")}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
+                {project.stack.map((stack) => (
                   <span
-                    key={tech}
+                    key={stack}
                     className="px-3 py-1 bg-gray-900 border border-gray-700 rounded-md text-sm text-gray-300"
                   >
-                    {tech}
+                    {stack}
                   </span>
                 ))}
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-gray-800">
-              <a href={project.siteUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button title={t("projectsContent.visitSite")} />
               </a>
               <a

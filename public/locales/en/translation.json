@@ -1,7 +1,5 @@
 {
   "projectsContent": {
-    "title": "Super Project Name",
-    "description": "Here is a detailed description of the project. I explain here the initial context, the problem encountered by the client or the users, and the technical approach that I adopted to carry out this realization from A to Z.",
     "keyPointsTitle": "Key Points & Features",
     "technologiesTitle": "Technologies Used",
     "visitSite": "Visit the site ↗",
@@ -70,6 +68,9 @@
       "submit": "Send message ➤"
     }
   },
+  "social": {
+    "title": "My networks"
+  },
   "terminal": {
     "scenario": [
       "# Booting system...",
@@ -77,26 +78,24 @@
       "<br>",
       "whoami",
       "> Nolan Notargiacomo",
-      "> Computer Science student at IUT2 Grenoble",
-      "> Course: Development of Communicating and Secure Applications",
+      "> Sophomore in computer science at IUT2 Grenoble",
+      "> Major in Deployment of Communicating and Secure Applications",
       "<br>",
       "cat skills.txt",
-      "Frontend: React, Vue.js, Flutter",
-      "Backend: Node.js, Python, Java",
-      "DevOps: Docker, Git",
+      "Frontend: HTML/CSS, React, JavaScript",
+      "Backend: Java, PHP, C++",
+      "DevOps: Docker, Git, Proxmox",
       "<br>",
-      "./start_ui.sh",
+      "./projects_start.sh",
       "Loading UI...",
-      "████████████████ 100%",
-      "<br>",
-      "ls -la projects/"
+      "████████████████ 100%"
     ],
     "projectsData": {
       "1": {
         "title": "BracketBuddy",
         "stack": ["Java", "JavaFX", "HTML", "CSS"],
         "description": "Design and development of a platform for creating and managing basketball tournaments",
-        "image": "/BracketBuddy.png",
+        "image": "/BracketBuddy/BracketBuddy.png",
         "longDescription": "BracketBuddy is a desktop application developed for the IUT2 programming project. It allows users to create and manage basketball tournaments. The application features a user-friendly interface for creating teams, scheduling matches, and tracking tournament progress with real-time updates of the tournament bracket.",
         "keyPoints": [
           "Implementation of a clean and scalable architecture.",
@@ -104,19 +103,20 @@
           "Implementation of a robust authentication system.",
           "100% adaptable design on mobile, tablet and desktop."
         ],
-        "technologies": ["Java", "JavaFX", "CSS", "SceneBuilder", "SQLite"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
-          "/BracketBuddy.png",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+          "/BracketBuddy/locations.png",
+          "/BracketBuddy/teams.png",
+          "/BracketBuddy/tournaments.png",
+          "/BracketBuddy/tree.png"
         ]
       },
       "2": {
         "title": "Entour'Âge",
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
         "description": "End-to-end encrypted messaging. HD video calls and secure sharing.",
-        "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
+        "image": "/Entourage/Entourage.png",
         "longDescription": "A secure messaging application with a focus on privacy. It offers end-to-end encryption for all communications, ensuring that only the sender and receiver can read the messages. It also supports high-definition video calls and secure file sharing.",
         "keyPoints": [
           "End-to-end encryption for all messages and files.",
@@ -124,7 +124,6 @@
           "Cross-platform support (desktop and web).",
           "Decentralized identity management."
         ],
-        "technologies": ["Python", "Flask", "SQLAlchemy", "JavaScript", "WebSockets"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
@@ -144,7 +143,6 @@
           "CMS integration for easy content management.",
           "SEO best practices implemented."
         ],
-        "technologies": ["React", "TypeScript", "Tailwind CSS", "Next.js"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
@@ -164,7 +162,6 @@
           "Integration with calendars and other productivity tools.",
           "Personalized recommendations and insights."
         ],
-        "technologies": ["Python", "TensorFlow", "NLTK", "FastAPI"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [
@@ -184,7 +181,6 @@
           "Customer accounts and order history.",
           "Product search and filtering capabilities."
         ],
-        "technologies": ["Vue.js", "Express", "Node.js", "PostgreSQL", "Stripe API"],
         "siteUrl": "#",
         "sourceCodeUrl": "#",
         "images": [

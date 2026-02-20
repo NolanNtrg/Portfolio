@@ -6,16 +6,12 @@ const ThemeToggle = () => {
   useEffect(() => {
     localStorage.setItem("Theme", isDarkTheme ? "Dark" : "Light");
     document.body.classList.toggle("dark-theme", isDarkTheme);
-
-    // -- True, it will apply class
-    // // false, it remove class
   }, [isDarkTheme]);
 
   return (
     <div className="flex items-center gap-2">
       <i className="fa-solid fa-sun text-xl text-(--color-text)"></i>
 
-      {/* Le Switch */}
       <label className="relative inline-flex items-center cursor-pointer">
         <input
           type="checkbox"
