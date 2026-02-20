@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "./button";
+import { Button } from "./Button";
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -10,8 +10,18 @@ export function LanguageSwitcher() {
 
   return (
     <div className="flex gap-2">
-      <Button onClick={() => changeLanguage("fr")} title="FR" small={true} full={i18n.language === "fr"} />
-      <Button onClick={() => changeLanguage("en")} title="EN" small={true} full={i18n.language === "en"} />
+      <Button
+        onClick={() => changeLanguage("fr")}
+        title="FR"
+        small={true}
+        full={i18n.language === "fr"}
+      />
+      <Button
+        onClick={() => changeLanguage("en")}
+        title="EN"
+        small={true}
+        full={i18n.language === "en"}
+      />
     </div>
   );
 }

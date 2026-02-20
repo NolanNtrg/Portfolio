@@ -1,10 +1,10 @@
-import { Contact } from "./components/contact/contact";
-import { EducationHeader } from "./components/education/educationHeader";
-import { EducationTimeline } from "./components/education/educationTimeline";
-import { Footer } from "./components/footer/footer";
-import { Hero } from "./components/hero/hero";
-import { Navbar } from "./components/hero/navbar";
-import { Screen } from "./components/terminal/screen";
+import { Contact } from "./components/contact/Contact";
+import { EducationHeader } from "./components/education/EducationHeader";
+import { EducationTimeline } from "./components/education/EducationTimeline";
+import { Footer } from "./components/footer/Footer";
+import { Hero } from "./components/hero/Hero";
+import { Navbar } from "./components/hero/Navbar";
+import { Screen } from "./components/terminal/Screen";
 
 function App() {
   return (

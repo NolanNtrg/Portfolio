@@ -1,14 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { Mail } from "./mail";
-import { SocialMedia } from "./socialMedia";
+import { Mail } from "./Mail";
+import { SocialMedia } from "./SocialMedia";
 
 export function Contact() {
   const { t } = useTranslation();
   return (
     <section id="contact" className="bg-black text-white p-10">
-      {/* Container : j'ai mis max-w-2xl pour que ce soit responsive (mieux que 50vw sur mobile) */}
       <div className="w-full mx-auto text-center">
-        {/* Header */}
         <div className="mb-10 contact">
           <h2 className="text-4xl mb-3 text-(--term-text) font-bold">
             {t("contact.title")}

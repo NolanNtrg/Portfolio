@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "../button";
-import type { Project } from "./screen";
+import { Button } from "../Button";
+import type { Project } from "./Screen";
 
 export function ProjectsContent({
   closeModal,

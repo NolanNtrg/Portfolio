@@ -1,14 +1,23 @@
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 export function Mail() {
   const { t } = useTranslation();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  function handleClick() {
+    if (formRef.current?.checkValidity()) {
+      alert("Le message a bien été envoyé!");
+    }
+  }
+
   return (
     <form
+      ref={formRef}
       action="https://formsubmit.co/7a9a6e68336a10f2a94150711362eab2"
       method="POST"
       className="grid gap-5 text-left md:w-[60vw] w-[90vw]"
     >
-      {/* Champs cachés pour FormSubmit */}
       <input
         type="hidden"
         name="_next"
@@ -22,7 +31,6 @@ export function Mail() {
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_template" value="table" />
 
-      {/* Input Nom */}
       <div className="flex flex-col gap-2">
         <label htmlFor="name" className="text-sm font-semibold text-gray-300">
           {t("contact.form.name")}
@@ -37,7 +45,6 @@ export function Mail() {
         />
       </div>
 
-      {/* Input Email */}
       <div className="flex flex-col gap-2">
         <label htmlFor="email" className="text-sm font-semibold text-gray-300">
           {t("contact.form.email")}
@@ -52,7 +59,6 @@ export function Mail() {
         />
       </div>
 
-      {/* Textarea Message */}
       <div className="flex flex-col gap-2">
         <label
           htmlFor="message"
@@ -69,8 +75,8 @@ export function Mail() {
         ></textarea>
       </div>
 
-      {/* Bouton Submit (Style ajouté pour correspondre au thème) */}
       <button
+        onClick={handleClick}
         type="submit"
         className="
     font-ibm font-semibold no-underline border-2 rounded-sm duration-300 ease-in-out flex items-center gap-2 cursor-pointer

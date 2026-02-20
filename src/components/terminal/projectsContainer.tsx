@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ProjectsContent } from "./projectsContent";
+import { ProjectsContent } from "./ProjectsContent";
 import { createPortal } from "react-dom";
-import type { Project } from "./screen";
+import type { Project } from "./Screen";
 
 export function ProjectsContainer({ project }: { project: Project }) {
   const [showModal, setShowModal] = useState(false);
