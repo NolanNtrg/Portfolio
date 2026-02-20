@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { EducationContainer } from "./educationContainer";
+import { EducationContainer } from "./EducationContainer";
 
 export function EducationTimeline() {
   const { t } = useTranslation();

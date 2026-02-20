@@ -1,4 +1,4 @@
-import { MainInfo } from "./mainInfo";
+import { MainInfo } from "./MainInfo";
 
 export function Hero() {
   return (

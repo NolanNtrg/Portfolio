@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { ProjectsContainer } from "./projectsContainer";
+import { ProjectsContainer } from "./ProjectsContainer";
 
 export type Project = {
   title: string;
