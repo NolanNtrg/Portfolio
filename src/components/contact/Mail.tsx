@@ -2,21 +2,49 @@ import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { PrivacyPolicy } from "./PrivacyPolicy";
+import { toast } from "sonner";
 
 export function Mail() {
   const { t } = useTranslation();
   const formRef = useRef<HTMLFormElement>(null);
   const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleClick() {
-    if (formRef.current?.checkValidity()) {
-      alert("Le message a bien été envoyé!");
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/7a9a6e68336a10f2a94150711362eab2",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (response.ok) {
+        toast.success("Message envoyé avec succès !");
+        formRef.current?.reset();
+      }
+    } catch (error) {
+      toast.error("Erreur lors de l'envoi.");
+    } finally {
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <>
       <form
+        onSubmit={handleSubmit}
         ref={formRef}
         action="https://formsubmit.co/7a9a6e68336a10f2a94150711362eab2"
         method="POST"
@@ -109,14 +137,14 @@ export function Mail() {
         </div>
 
         <button
-          onClick={handleClick}
+          disabled={isSubmitting}
           type="submit"
-          className="
+          className={`
         font-ibm font-semibold no-underline border-2 rounded-sm duration-300 ease-in-out flex items-center gap-2 cursor-pointer
       bg-[rgb(237,237,237)] text-[#1a1a1a] hover:bg-(--green) border-none
-        transition-all hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]} px-6 py-3 text-[0.9rem]"
+        transition-all hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]} px-6 py-3 text-[0.9rem] ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
         >
-          {t("contact.form.submit")}
+          {isSubmitting ? "..." : t("contact.form.submit")}
         </button>
       </form>
       {showModal &&

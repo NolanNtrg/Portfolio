@@ -19,7 +19,6 @@ export function Screen() {
   const trackRef = useRef<HTMLDivElement>(null);
   const projectsContainerRef = useRef<HTMLDivElement>(null);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
-
   const [globalProgress, setGlobalProgress] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [maxTranslate, setMaxTranslate] = useState(0);
@@ -35,6 +34,7 @@ export function Screen() {
   const rawScenario = t("terminal.scenario", {
     returnObjects: true,
   }) as string[];
+
   const scenario = [
     style.comment(rawScenario[0]),
     style.ok(rawScenario[1]),
@@ -52,7 +52,6 @@ export function Screen() {
     `<span class="text-white mr-2">user@portfolio:~$</span> <span class="text-yellow-300 font-bold">${rawScenario[13]}</span>`,
     style.high(rawScenario[14]),
     rawScenario[15],
-    rawScenario[16],
   ];
 
   const projectsData = t("terminal.projectsData", {
@@ -99,8 +98,8 @@ export function Screen() {
     return () => clearInterval(timer);
   }, []);
 
-  const textPhaseEnd = 0.35;
-  const projectsScrollStart = 0.4;
+  const textPhaseEnd = 0.47;
+  const projectsScrollStart = 0.5;
 
   const textProgress = Math.min(globalProgress / textPhaseEnd, 1);
   const visibleLines = Math.floor(textProgress * (scenario.length + 1));
@@ -108,7 +107,7 @@ export function Screen() {
   const isTextFinished = globalProgress > textPhaseEnd;
 
   let projectsScrollProgress = 0;
-  if (globalProgress > projectsScrollStart) {
+  if (globalProgress > projectsScrollStart - 0.03) {
     projectsScrollProgress =
       (globalProgress - projectsScrollStart) / (1 - projectsScrollStart);
   }
@@ -116,7 +115,7 @@ export function Screen() {
 
   return (
     <main className="text-white font-mono w-full">
-      <section ref={trackRef} className="h-[450vh] relative w-full">
+      <section ref={trackRef} className="h-[355vh] relative w-full">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center p-2 md:p-4 overflow-hidden">
           <div
             className="w-[95vw] h-[90dvh] md:w-[90vw] md:h-[90vh] border border-[#333] bg-[#0c0c0c] rounded-lg flex flex-col relative overflow-hidden pointer-events-none"
