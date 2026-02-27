@@ -26,13 +26,13 @@ export function ProjectsContainer({ project }: { project: Project }) {
             {stack.map((tech: string) => (
               <span
                 key={tech}
-                className="text-[10px] px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700"
+                className="text-[12px] px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700"
               >
                 {tech}
               </span>
             ))}
           </div>
-          <p className="text-xs text-gray-400 line-clamp-2">{description}</p>
+          <p className="text-gray-300 text-sm line-clamp-2">{description}</p>
         </div>
       </button>
       {showModal &&

@@ -9,7 +9,7 @@ import { Screen } from "./components/terminal/Screen";
 function App() {
   return (
     <div>
-      <div className="transition-all duration-300 ease-in-out fixed-bg fixed top-0 left-0 -z-1 h-screen w-full bg-(--background-color)"></div>
+      <div className="fixed-bg fixed top-0 left-0 -z-1 h-screen w-full bg-(--background-color)"></div>
       <Navbar />
       <Hero />
       <Screen />

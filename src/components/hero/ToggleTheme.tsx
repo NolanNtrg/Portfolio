@@ -4,6 +4,12 @@ const ThemeToggle = () => {
   const [isDarkTheme, setDarkTheme] = useState<boolean>(false);
 
   useEffect(() => {
+    const getCurrentTheme = () =>
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setDarkTheme(getCurrentTheme());
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem("Theme", isDarkTheme ? "Dark" : "Light");
     document.body.classList.toggle("dark-theme", isDarkTheme);
   }, [isDarkTheme]);

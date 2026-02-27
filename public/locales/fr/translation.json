@@ -1,7 +1,7 @@
 {
   "footer": {
     "copyright": "Nolan Notargiacomo. Tous droits réservés.",
-    "update": "Dernière mise à jour le 20 février 2026."
+    "update": "Dernière mise à jour le 27 février 2026."
   },
   "projectsContent": {
     "keyPointsTitle": "Points Clés & Fonctionnalités",
@@ -28,7 +28,7 @@
         "degree": "BUT Informatique - 2ème année",
         "school": "IUT2, Grenoble",
         "description": [
-          "Parcours : Développement d'applications Communicantes et Sécurisées",
+          "Parcours Déploiement d'applications Communicantes et Sécurisées",
           "Déploiement et sécurisation d'infrastructures réseaux (Proxmox, nftables)",
           "Projets full-stack et DevOps (Docker, Git)",
           "Dévelopement web (PHP/Symfony, JavaScript)"
@@ -69,11 +69,66 @@
       "emailPlaceholder": "john@example.com",
       "message": "Message",
       "messagePlaceholder": "Bonjour Nolan...",
-      "submit": "Envoyer le message ➤"
+      "submit": "Envoyer le message ➤",
+      "consent1": "J'accepte que les données saisies dans ce formulaire soient utilisées pour me recontacter.",
+      "consent2": "J'ai lu et j'accepte la ",
+      "privacyPolicyLink": "Politique de Confidentialité"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Politique de Confidentialité & Mentions Légales",
+    "publisher": {
+      "title": "1. Éditeur du site",
+      "intro": "Le présent portfolio est édité par :",
+      "name": "Nom :",
+      "status": "Statut :",
+      "contactEmail": "Email de contact :",
+      "address": "Adresse :"
+    },
+    "hosting": {
+      "title": "2. Hébergement",
+      "intro": "Ce site est hébergé par :",
+      "provider": "Hébergeur :",
+      "address": "Adresse de l'hébergeur :",
+      "website": "Site Web :"
+    },
+    "intellectualProperty": {
+      "title": "3. Propriété Intellectuelle",
+      "content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. La reproduction de tout ou partie de ce site (images, textes, code source, design) est interdite sauf autorisation expresse de l'éditeur. Les marques, logos et technologies cités dans la section 'Projets' appartiennent à leurs propriétaires respectifs."
+    },
+    "dataManagement": {
+      "title": "4. Gestion des données & Formulaire de contact",
+      "intro": "Dans le cadre de l'utilisation du formulaire de contact, des données à caractère personnel vous concernant sont collectées (Nom, Email, Message).",
+      "purpose": {
+        "title": "Finalité :",
+        "content": "Ces données sont collectées dans l'unique but de pouvoir traiter et répondre à vos demandes de contact. Aucune donnée n'est cédée à des fins commerciales."
+      },
+      "subcontractor": {
+        "title": "Sous-traitant :",
+        "name": "FormSubmit",
+        "content1": "L'envoi des e-mails est opéré par le service tiers ",
+        "content2": ". En validant le formulaire, vous acceptez que vos données transitent de manière sécurisée par leurs serveurs."
+      },
+      "retention": {
+        "title": "Conservation :",
+        "content": "Les messages reçus sont conservés pour une durée maximale d'un an, ou jusqu'à la fin des échanges qui en découlent."
+      },
+      "yourRights": {
+        "title": "Vos droits :",
+        "content": "Conformément au RGPD, vous disposez d'un droit d'accès, de modification et de suppression de vos données en me contactant par e-mail."
+      }
+    },
+    "thirdPartyServices": {
+      "title": "5. Services Tiers & Cookies",
+      "fontAwesomeTitle": "FontAwesome",
+      "fontAwesome1": " : Ce site utilise le service Font Awesome pour l'affichage de certaines icônes. Lors du chargement de ces ressources, ",
+      "fontAwesome2": " peut être amené à traiter brièvement votre adresse IP à des fins de sécurité et de fonctionnement technique.",
+      "cookiesTitle": "Cookies : ",
+      "cookies": "Ce portfolio n'utilise aucun cookie de traçage publicitaire ou d'analyse comportementale. Seuls des cookies techniques strictement nécessaires au bon fonctionnement de l'hébergement peuvent être déposés."
     }
   },
   "social": {
-    "title": "Mes réseaux"
+    "title": "MES RÉSEAUX"
   },
   "terminal": {
     "scenario": [

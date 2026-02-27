@@ -1,7 +1,7 @@
 {
   "footer": {
     "copyright": "Nolan Notargiacomo. All rights reserved.",
-    "update": "Last updated: February 20, 2026."
+    "update": "Last updated: February 27, 2026."
   },
   "projectsContent": {
     "keyPointsTitle": "Key Points & Features",
@@ -69,11 +69,66 @@
       "emailPlaceholder": "john@example.com",
       "message": "Message",
       "messagePlaceholder": "Hello Nolan...",
-      "submit": "Send message ➤"
+      "submit": "Send message ➤",
+      "consent1": "I agree that the data entered in this form will be used to contact me again.",
+      "consent2": "I have read and accept the ",
+      "privacyPolicyLink": "Privacy Policy"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy & Legal Notice",
+    "publisher": {
+      "title": "1. Site Publisher",
+      "intro": "This portfolio is published by:",
+      "name": "Name:",
+      "status": "Status:",
+      "contactEmail": "Contact Email:",
+      "address": "Address:"
+    },
+    "hosting": {
+      "title": "2. Hosting",
+      "intro": "This site is hosted by:",
+      "provider": "Provider:",
+      "address": "Provider Address:",
+      "website": "Website:"
+    },
+    "intellectualProperty": {
+      "title": "3. Intellectual Property",
+      "content": "This entire site is subject to French and international legislation on copyright and intellectual property. Reproduction of all or part of this site (images, text, source code, design) is prohibited without the express authorization of the publisher. The trademarks, logos, and technologies mentioned in the 'Projects' section belong to their respective owners."
+    },
+    "dataManagement": {
+      "title": "4. Data Management & Contact Form",
+      "intro": "In the context of using the contact form, personal data concerning you is collected (Name, Email, Message).",
+      "purpose": {
+        "title": "Purpose:",
+        "content": "This data is collected for the sole purpose of being able to process and respond to your contact requests. No data is sold for commercial purposes."
+      },
+      "subcontractor": {
+        "title": "Subcontractor :",
+        "name": "FormSubmit",
+        "content1": "The sending of emails is operated by the third-party service ",
+        "content2": ". By submitting the form, you agree that your data will be securely transmitted through their servers."
+      },
+      "retention": {
+        "title": "Retention:",
+        "content": "Received messages are kept for a maximum of one year, or until the end of the exchanges that result from them."
+      },
+      "yourRights": {
+        "title": "Your Rights:",
+        "content": "In accordance with the GDPR, you have the right to access, modify, and delete your data by contacting me via email."
+      }
+    },
+    "thirdPartyServices": {
+      "title": "5. Third-Party Services & Cookies",
+      "fontAwesomeTitle": "FontAwesome",
+      "fontAwesome1": ": This site uses the Font Awesome service for displaying certain icons. When loading these resources, ",
+      "fontAwesome2": " may briefly process your IP address for security and technical operation purposes.",
+      "cookiesTitle": "Cookies: ",
+      "cookies": "This portfolio does not use any advertising or behavioral analysis tracking cookies. Only technical cookies strictly necessary for the proper functioning of the hosting may be stored."
     }
   },
   "social": {
-    "title": "My networks"
+    "title": "MY NETWORKS"
   },
   "terminal": {
     "scenario": [

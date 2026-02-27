@@ -99,8 +99,8 @@ export function Screen() {
     return () => clearInterval(timer);
   }, []);
 
-  const textPhaseEnd = 0.25;
-  const projectsScrollStart = 0.3;
+  const textPhaseEnd = 0.35;
+  const projectsScrollStart = 0.4;
 
   const textProgress = Math.min(globalProgress / textPhaseEnd, 1);
   const visibleLines = Math.floor(textProgress * (scenario.length + 1));
@@ -116,9 +116,12 @@ export function Screen() {
 
   return (
     <main className="text-white font-mono w-full">
-      <section ref={trackRef} className="h-[250vh] relative w-full">
+      <section ref={trackRef} className="h-[450vh] relative w-full">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center p-2 md:p-4 overflow-hidden">
-          <div className="w-[95vw] h-[90dvh] md:w-[90vw] md:h-[90vh] border border-[#333] bg-[#0c0c0c] rounded-lg flex flex-col relative overflow-hidden pointer-events-none">
+          <div
+            className="w-[95vw] h-[90dvh] md:w-[90vw] md:h-[90vh] border border-[#333] bg-[#0c0c0c] rounded-lg flex flex-col relative overflow-hidden pointer-events-none"
+            id="terminal"
+          >
             <header className="h-10 border-b border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-gray-500 bg-[#0c0c0c]">
               <span>{t("terminal.header.tty")}</span>
               <span>{t("terminal.header.uptime", { minutes })}</span>

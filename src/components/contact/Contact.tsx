@@ -5,17 +5,17 @@ import { SocialMedia } from "./SocialMedia";
 export function Contact() {
   const { t } = useTranslation();
   return (
-    <section id="contact" className="bg-black text-white p-10">
+    <section id="contact" className="bg-black text-white pt-10 pb-10">
       <div className="w-full mx-auto text-center">
-        <div className="mb-10 contact">
+        <div className="md:mb-10 contact">
           <h2 className="text-4xl mb-3 text-(--term-text) font-bold">
             {t("contact.title")}
           </h2>
-          <p className="text-gray-400 font-mono text-base">
+          <p className="text-gray-400 font-mono text-base pr-3 pl-3">
             {t("contact.subtitle")}
           </p>
         </div>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-row flex-wrap justify-center gap-[2vw]">
           <SocialMedia />
           <Mail />
         </div>
