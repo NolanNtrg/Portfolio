@@ -71,6 +71,7 @@ export function Mail() {
             name="name"
             id="name"
             autoComplete="name"
+            aria-labelledby="name"
             required
             placeholder={t("contact.form.namePlaceholder")}
             className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
@@ -88,6 +89,7 @@ export function Mail() {
             name="email"
             autoComplete="email"
             id="email"
+            aria-labelledby="email"
             required
             placeholder={t("contact.form.emailPlaceholder")}
             className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
@@ -103,16 +105,26 @@ export function Mail() {
           <textarea
             name="message"
             id="message"
+            aria-labelledby="message"
             required
             placeholder={t("contact.form.messagePlaceholder")}
             className="p-3 min-h-30 resize-y bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
           ></textarea>
         </div>
         <div className="flex gap-5 items-center font-mono text-sm">
-          <input type="checkbox" id="consent1" required className="scale-150" />
+          <input
+            type="checkbox"
+            id="consent1"
+            required
+            className="scale-150"
+            aria-labelledby="consent-first"
+          />
           {t("contact.form.consent1")}
         </div>
-        <div className="flex gap-5 items-center font-mono text-sm">
+        <div
+          className="flex gap-5 items-center font-mono text-sm"
+          aria-labelledby="consent-second"
+        >
           <input type="checkbox" id="consent2" required className="scale-150" />
           <p>
             {t("contact.form.consent2")}
