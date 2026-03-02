@@ -19,7 +19,7 @@ export function EducationContainer({
   return (
     <div
       className={`ml-[5vw] mr-[5vw] mb-[10vw] md:mb-0 md:flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-      data-aos="fade-up"
+      data-aos="fade-down"
       data-aos-duration="400"
     >
       <div className="bg-(--background-containers) rounded-xl overflow-hidden border border-(--green) md:w-[40vw] p-2">

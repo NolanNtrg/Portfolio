@@ -16,14 +16,14 @@ export function HeroButtons() {
         title={t("heroButtons.cv")}
         href="/CV-Nolan-Notargiacomo.pdf"
         download="CV-Nolan-Notargiacomo.pdf"
-        icon="file.svg"
+        icon="/file.svg"
       />
 
       <Button
         title={t("heroButtons.contact")}
         full={true}
         onClick={scrollToBottom}
-        icon="envelope.svg"
+        icon="/envelope.svg"
       />
     </div>
   );
