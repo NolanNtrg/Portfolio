@@ -119,7 +119,7 @@ export function Mail() {
             className="scale-150"
             aria-labelledby="consent-first"
           />
-          {t("contact.form.consent1")}
+          <label>{t("contact.form.consent1")}</label>
         </div>
         <div className="flex gap-5 items-center font-mono text-sm">
           <input
@@ -129,7 +129,7 @@ export function Mail() {
             className="scale-150"
             aria-labelledby="consent-second"
           />
-          <p>
+          <label>
             {t("contact.form.consent2")}
             <span
               onClick={() => setShowModal(true)}
@@ -138,7 +138,7 @@ export function Mail() {
               {t("contact.form.privacyPolicyLink")}
             </span>
             .
-          </p>
+          </label>
         </div>
 
         <button
