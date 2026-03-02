@@ -146,16 +146,16 @@ export function PrivacyPolicy({ closeModal }: { closeModal: () => void }) {
               </h3>
               <p className="text-(--color-text) leading-relaxed text-sm md:text-base mb-3">
                 <strong>
-                  {t("privacyPolicy.thirdPartyServices.fontAwesomeTitle")}
+                  {t("privacyPolicy.thirdPartyServices.svgrepoTitle")}
                 </strong>
-                {t("privacyPolicy.thirdPartyServices.fontAwesome1")}
+                {t("privacyPolicy.thirdPartyServices.svgrepo")}
                 <a
                   className="text-(--green) underline cursor-pointer"
-                  href="https://fontawesome.com"
+                  href="https://svgrepo.com"
                 >
-                  {t("privacyPolicy.thirdPartyServices.fontAwesomeTitle")}
+                  {t("privacyPolicy.thirdPartyServices.svgrepoTitle")}
                 </a>
-                {t("privacyPolicy.thirdPartyServices.fontAwesome2")}
+                .
               </p>
               <p className="text-(--color-text) leading-relaxed text-sm md:text-base">
                 <strong>

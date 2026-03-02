@@ -121,19 +121,22 @@ export function Mail() {
           />
           {t("contact.form.consent1")}
         </div>
-        <div
-          className="flex gap-5 items-center font-mono text-sm"
-          aria-labelledby="consent-second"
-        >
-          <input type="checkbox" id="consent2" required className="scale-150" />
+        <div className="flex gap-5 items-center font-mono text-sm">
+          <input
+            type="checkbox"
+            id="consent2"
+            required
+            className="scale-150"
+            aria-labelledby="consent-second"
+          />
           <p>
             {t("contact.form.consent2")}
-            <a
+            <span
               onClick={() => setShowModal(true)}
               className="text-green-400 underline cursor-pointer"
             >
               {t("contact.form.privacyPolicyLink")}
-            </a>
+            </span>
             .
           </p>
         </div>

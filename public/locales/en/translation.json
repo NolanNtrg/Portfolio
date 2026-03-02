@@ -120,9 +120,8 @@
     },
     "thirdPartyServices": {
       "title": "5. Third-Party Services & Cookies",
-      "fontAwesomeTitle": "FontAwesome",
-      "fontAwesome1": ": This site uses the Font Awesome service for displaying certain icons. When loading these resources, ",
-      "fontAwesome2": " may briefly process your IP address for security and technical operation purposes.",
+      "svgrepoTitle": "SVGRepo",
+      "svgrepo": " : This site uses icons from ",
       "cookiesTitle": "Cookies: ",
       "cookies": "This portfolio does not use any advertising or behavioral analysis tracking cookies. Only technical cookies strictly necessary for the proper functioning of the hosting may be stored."
     }
