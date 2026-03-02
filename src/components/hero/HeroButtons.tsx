@@ -13,17 +13,17 @@ export function HeroButtons() {
   return (
     <div className="flex justify-center flex-wrap gap-4">
       <Button
-        icon="fa-file"
         title={t("heroButtons.cv")}
         href="/CV-Nolan-Notargiacomo.pdf"
         download="CV-Nolan-Notargiacomo.pdf"
+        icon="file.svg"
       />
 
       <Button
-        icon="fa-envelope"
         title={t("heroButtons.contact")}
         full={true}
         onClick={scrollToBottom}
+        icon="envelope.svg"
       />
     </div>
   );

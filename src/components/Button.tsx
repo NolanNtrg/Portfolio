@@ -1,3 +1,5 @@
+import { Icon } from "./Icon";
+
 type ButtonProps = {
   title: string;
   href?: string;
@@ -29,7 +31,7 @@ export function Button({
   if (href) {
     return (
       <a href={href} download={download} className={baseStyles}>
-        {icon && <i className={`fa-solid ${icon}`}></i>}
+        {icon && <Icon src={icon} />}
         {title}
       </a>
     );
@@ -41,7 +43,7 @@ export function Button({
       className={baseStyles}
       onClick={onClick}
     >
-      {icon && <i className={`fa-solid ${icon}`}></i>}
+      {icon && <Icon src={icon} />}
       {title}
     </button>
   );

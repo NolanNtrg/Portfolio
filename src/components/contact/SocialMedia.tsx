@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Icon } from "../Icon";
 
 export function SocialMedia() {
   const { t } = useTranslation();
@@ -12,13 +13,13 @@ export function SocialMedia() {
           className="text-8xl cursor-pointer hover:-translate-y-0.75 transition-all duration-300 ease-in-out hover:text-(--green)"
           href="https://www.linkedin.com/in/nolan-notargiacomo-49a03831a/"
         >
-          <i className="fa-brands fa-linkedin"></i>
+          <Icon src="linkedin.svg" big={true} />
         </a>
         <a
           className="text-8xl cursor-pointer hover:-translate-y-0.75 transition-all duration-300 ease-in-out hover:text-(--green)"
           href="https://github.com/NolanNtrg"
         >
-          <i className="fa-brands fa-github"></i>
+          <Icon src="github.svg" big={true} />
         </a>
       </div>
     </div>

@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+@import "@fontsource/ibm-plex-mono/600.css";
 
 :root {
   --background-color: #abaecd85;
@@ -11,6 +11,7 @@
   --color-text-contrasted: rgb(237, 237, 237);
   --color-text: rgb(0, 0, 0);
   --green: var(--color-green-600);
+  --font-ibm: "IBM Plex Mono";
 }
 
 .dark-theme {
@@ -33,10 +34,6 @@
   background-position:
     0 0,
     10px 10px;
-}
-
-@theme {
-  --font-ibm: "IBM Plex Mono", monospace;
 }
 
 #description::after {

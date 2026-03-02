@@ -70,6 +70,7 @@ export function Mail() {
             type="text"
             name="name"
             id="name"
+            autoComplete="name"
             required
             placeholder={t("contact.form.namePlaceholder")}
             className="p-3 bg-white/5 border border-[#333] rounded-md text-white font-sans transition-all duration-300 focus:outline-none focus:border-(--term-text) focus:bg-[rgba(0,255,65,0.05)]"
@@ -85,6 +86,7 @@ export function Mail() {
           <input
             type="email"
             name="email"
+            autoComplete="email"
             id="email"
             required
             placeholder={t("contact.form.emailPlaceholder")}
@@ -107,23 +109,11 @@ export function Mail() {
           ></textarea>
         </div>
         <div className="flex gap-5 items-center font-mono text-sm">
-          <input
-            type="checkbox"
-            id="consent"
-            name="consent"
-            required
-            className="scale-150"
-          />
+          <input type="checkbox" id="consent1" required className="scale-150" />
           {t("contact.form.consent1")}
         </div>
         <div className="flex gap-5 items-center font-mono text-sm">
-          <input
-            type="checkbox"
-            id="consent"
-            name="consent"
-            required
-            className="scale-150"
-          />
+          <input type="checkbox" id="consent2" required className="scale-150" />
           <p>
             {t("contact.form.consent2")}
             <a

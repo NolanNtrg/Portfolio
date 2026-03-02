@@ -21,7 +21,9 @@ export function ProjectsContainer({ project }: { project: Project }) {
           />
         </div>
         <div className="p-4">
-          <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
+          <h3 className="text-white text-lg font-semibold font-(family-name:--font-ibm) mb-2">
+            {title}
+          </h3>
           <div className="flex flex-wrap gap-2 mb-2">
             {stack.map((tech: string) => (
               <span

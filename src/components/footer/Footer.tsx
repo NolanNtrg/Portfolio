@@ -7,7 +7,10 @@ export function Footer() {
       <p>
         &copy; {new Date().getFullYear()} {t("footer.copyright")}
       </p>
-      <p>{t("footer.update")}</p>
+      <p>
+        {t("footer.update")} {new Date().getDay()}/{new Date().getMonth() + 1}/
+        {new Date().getFullYear()}
+      </p>
     </footer>
   );
 }

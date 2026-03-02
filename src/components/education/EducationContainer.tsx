@@ -33,7 +33,7 @@ export function EducationContainer({
             </div>
           )}
           <div className="text-green-400 font-mono text-sm mb-3">{year}</div>
-          <h3 className="text-xl font-ibm font-semibold mb-2 text-white">
+          <h3 className="text-xl font-semibold font-(family-name:--font-ibm) mb-2 text-white">
             {degree}
           </h3>
           <p className="text-sm px-2 py-1 bg-gray-800 rounded text-gray-300 border border-gray-700 font-mono w-fit mb-7">
