@@ -115,6 +115,7 @@ export function Mail() {
           <input
             type="checkbox"
             id="consent1"
+            aria-label="Première case de consentement"
             required
             className="scale-150"
             aria-labelledby="consent-first"
@@ -125,6 +126,7 @@ export function Mail() {
           <input
             type="checkbox"
             id="consent2"
+            aria-label="Deuxième case de consentement"
             required
             className="scale-150"
             aria-labelledby="consent-second"
