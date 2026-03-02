@@ -166,7 +166,7 @@ export function Screen() {
                 }}
               >
                 <div className="text-center mb-10 pt-6">
-                  <h2 className="text-4xl md:text-3xl lg:text-4xl text-(rgb(237, 237, 237)) mb-2 font-bold">
+                  <h2 className="text-4xl md:text-4xl lg:text-4xl text-(rgb(237, 237, 237)) mb-2 font-bold">
                     {t("terminal.projectsHeader.title")}
                   </h2>
                   <p className="text-(--gray) font-mono text-xs md:text-sm">
