@@ -226,18 +226,9 @@
         "sourceCodeUrl": "https://github.com/NolanNtrg/minecraft-plugins"
       }
     },
-    "header": {
-      "tty": "TTY1: /dev/pts/0",
-      "uptime": "UPTIME: {{minutes}} min"
-    },
     "projectsHeader": {
       "title": "MES PROJETS",
       "subtitle": "Projets réalisés en milieu académique et personnel"
-    },
-    "footer": {
-      "status": "STATUS: ",
-      "connected": "CONNECTED",
-      "buffer": "BUFFER: {{progress}}%"
     }
   }
 }

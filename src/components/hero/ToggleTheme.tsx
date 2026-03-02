@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Switch } from "@headlessui/react";
+import { Icon } from "../Icon";
 
 const ThemeToggle = () => {
   const [isDarkTheme, setDarkTheme] = useState<boolean>(false);
@@ -15,25 +17,16 @@ const ThemeToggle = () => {
   }, [isDarkTheme]);
 
   return (
-    <div className="flex items-center gap-2">
-      <i className="fa-solid fa-sun text-xl text-(--color-text)"></i>
-
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input
-          type="checkbox"
-          className="sr-only peer"
-          checked={isDarkTheme}
-          onChange={() => setDarkTheme(!isDarkTheme)}
-        />
-        <div
-          className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer 
-          dark:bg-gray-700 peer-checked:after:translate-x-full 
-          after:content-[''] after:absolute after:top-0.5 after:left-0.5 
-          after:bg-white after:border-gray-300 after:border after:rounded-full 
-          after:h-5 after:w-5 after:transition-all peer-checked:bg-green-400"
-        ></div>
-      </label>
-      <i className="fa-solid fa-moon text-xl text-(--color-text)"></i>
+    <div className="flex items-center gap-2 text-(--color-text)">
+      <Icon src="sun.svg" />
+      <Switch
+        checked={isDarkTheme}
+        onChange={() => setDarkTheme(!isDarkTheme)}
+        className="cursor-pointer group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-checked:bg-(--green)"
+      >
+        <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-checked:translate-x-6" />
+      </Switch>
+      <Icon src="moon.svg" />
     </div>
   );
 };

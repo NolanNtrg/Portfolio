@@ -12,14 +12,16 @@ export function SocialMedia() {
         <a
           className="text-8xl cursor-pointer hover:-translate-y-0.75 transition-all duration-300 ease-in-out hover:text-(--green)"
           href="https://www.linkedin.com/in/nolan-notargiacomo-49a03831a/"
+          aria-label="Mon compte LinkedIn."
         >
-          <Icon src="/linkedin.svg" big={true} />
+          <Icon src="/linkedin.svg" big={true} aria-hidden="true" />
         </a>
         <a
           className="text-8xl cursor-pointer hover:-translate-y-0.75 transition-all duration-300 ease-in-out hover:text-(--green)"
           href="https://github.com/NolanNtrg"
+          aria-label="Mon repository GitHub où je publie mes projets personnels."
         >
-          <Icon src="/github.svg" big={true} />
+          <Icon src="/github.svg" big={true} aria-hidden="true" />
         </a>
       </div>
     </div>

@@ -121,9 +121,9 @@ export function Screen() {
             className="w-[95vw] h-[90dvh] md:w-[90vw] md:h-[90vh] border border-[#333] bg-[#0c0c0c] rounded-lg flex flex-col relative overflow-hidden pointer-events-none"
             id="terminal"
           >
-            <header className="h-10 border-b border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-gray-500 bg-[#0c0c0c]">
-              <span>{t("terminal.header.tty")}</span>
-              <span>{t("terminal.header.uptime", { minutes })}</span>
+            <header className="h-10 border-b border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-(--gray) bg-[#0c0c0c]">
+              <span>TTY1: /dev/pts/0</span>
+              <span>UPTIME: {minutes} min</span>
             </header>
 
             <div
@@ -169,7 +169,7 @@ export function Screen() {
                   <h2 className="text-4xl md:text-3xl lg:text-4xl text-(rgb(237, 237, 237)) mb-2 font-bold">
                     {t("terminal.projectsHeader.title")}
                   </h2>
-                  <p className="text-gray-400 font-mono text-xs md:text-sm">
+                  <p className="text-(--gray) font-mono text-xs md:text-sm">
                     {t("terminal.projectsHeader.subtitle")}
                   </p>
                 </div>
@@ -181,18 +181,11 @@ export function Screen() {
                 </div>
               </div>
             </div>
-            <footer className="h-8 border-t border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-gray-500 bg-[#111]">
+            <footer className="h-8 border-t border-[#333] flex justify-between items-center px-4 shrink-0 z-30 text-xs text-(--gray) bg-[#111]">
               <span>
-                {t("terminal.footer.status")}
-                <span className="text-green-400">
-                  {t("terminal.footer.connected")}
-                </span>
+                STATUS: <span className="text-green-400">CONNECTED</span>
               </span>
-              <span>
-                {t("terminal.footer.buffer", {
-                  progress: Math.round(globalProgress * 100),
-                })}
-              </span>
+              <span>BUFFER: {Math.round(globalProgress * 100)}%</span>
             </footer>
           </div>
         </div>

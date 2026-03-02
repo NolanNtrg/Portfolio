@@ -12,6 +12,7 @@
   --color-text: rgb(0, 0, 0);
   --green: var(--color-green-600);
   --font-ibm: "IBM Plex Mono";
+  --gray: #a1a1aa;
 }
 
 .dark-theme {
