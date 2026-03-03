@@ -17,7 +17,6 @@
     "@tailwindcss/vite": "^4.1.18",
     "@vercel/analytics": "^1.6.1",
     "@vercel/speed-insights": "^1.3.1",
-    "aos": "^2.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "i18next": "^25.8.11",
@@ -28,6 +27,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-i18next": "^16.5.4",
+    "sal.js": "^0.8.5",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@types/aos": "^3.0.7",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",

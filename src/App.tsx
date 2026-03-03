@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import sal from "sal.js";
+import "sal.js/dist/sal.css";
 import { Contact } from "./components/contact/Contact";
 import { EducationHeader } from "./components/education/EducationHeader";
 import { EducationTimeline } from "./components/education/EducationTimeline";
@@ -7,6 +10,14 @@ import { Navbar } from "./components/hero/Navbar";
 import { Screen } from "./components/terminal/Screen";
 
 function App() {
+  useEffect(() => {
+    sal({
+      threshold: 0.1,
+      once: false,
+      root: null,
+    });
+  }, []);
+
   return (
     <div>
       <div className="fixed-bg fixed top-0 left-0 -z-1 h-screen w-full bg-(--background-color)"></div>
