@@ -1,110 +1,177 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "../Button.tsx";
 import type { Project } from "./Screen.tsx";
 
 export function ProjectsContent({
   closeModal,
   project,
+  index,
 }: {
   closeModal: () => void;
   project: Project;
+  index?: number;
 }) {
   const { t } = useTranslation();
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && closeModal();
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", onKey);
     };
-  }, []);
+  }, [closeModal]);
+
+  const indexLabel = String(index != null ? index + 1 : 1).padStart(2, "0");
 
   return (
     <>
       <div
         onClick={closeModal}
-        className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
-      ></div>
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-11/12 max-w-4xl max-h-[80vh] bg-(--background-navbar) rounded-lg shadow-2xl border border-gray-700 text-white overflow-hidden">
-        <div className="absolute top-4 right-4 z-20">
-          <Button title="X" small={true} onClick={closeModal} full={true} />
+        className="fixed inset-0 bg-black/82 backdrop-blur-sm"
+      />
+
+      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-[95vw] max-w-5xl max-h-[88vh] flex flex-col bg-[#0a0a0a] border border-[#1e1e1e] rounded-xl overflow-hidden shadow-[0_0_0_1px_rgba(74,222,128,0.05),0_40px_80px_rgba(0,0,0,0.85)] font-(family-name:--font-ibm)">
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-400/30 to-transparent z-10 pointer-events-none" />
+
+        <div className="flex items-center justify-between px-5 h-11 border-b border-[#161616] bg-[#0d0d0d] shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="flex gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56] shadow-[0_0_4px_rgba(255,95,86,0.5)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] shadow-[0_0_4px_rgba(255,189,46,0.4)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f] shadow-[0_0_4px_rgba(39,201,63,0.5)]" />
+            </div>
+            <span className="text-[10px] text-(--gray) tracking-[.12em]">
+              portfolio/projects/{indexLabel}
+            </span>
+          </div>
+          <button
+            onClick={closeModal}
+            className="w-6 h-6 border border-(--gray) rounded text-(--gray) text-[20px] flex items-center justify-center hover:border-[#3a3a3a] hover:text-[#666] transition-colors duration-200"
+          >
+            X
+          </button>
         </div>
-        <div className="overflow-y-auto custom-scrollbar p-6 md:p-10 max-h-[80vh]">
-          <div className="mt-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-(--green) md:p-0 pr-10">
-              {project.title}
-            </h2>
-            <p className="text-(--color-text) mb-8 leading-relaxed text-sm md:text-base">
-              {project.longDescription}
-            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              {project.images &&
-                project.images.map((image: string, index: number) => (
-                  <div
-                    key={index}
-                    className="h-72 rounded-md overflow-hidden w-fit"
-                  >
-                    <img
-                      src={image}
-                      alt={`Project screenshot ${index + 1}`}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                ))}
-            </div>
+        <div className="overflow-y-auto flex-1 px-8 py-7">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-[10px] tracking-[.14em] text-green-400">
+              PROJECT {indexLabel}
+            </span>
+            <div className="flex-1 h-px bg-green-400/40" />
+          </div>
 
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-(--color-name) border-b border-gray-700 pb-2">
-                {t("projectsContent.keyPointsTitle")}
-              </h3>
-              <ul className="list-disc list-inside space-y-2 text-(--color-text) marker:text-(--green)">
-                {project.keyPoints.map((point: string, index: number) => (
-                  <li
-                    key={index}
-                    dangerouslySetInnerHTML={{
-                      __html: point,
-                    }}
+          <h2 className="text-[24px] font-semibold text-[#ebebeb] tracking-tight mb-3">
+            {project.title}
+          </h2>
+
+          <p className="md:text-[16px] text-[14px] text-(--gray) leading-[1.8] mb-7 font-semibold">
+            {project.longDescription}
+          </p>
+
+          {project.images && project.images.length > 0 && (
+            <div className="flex flex-wrap gap-3 mb-7">
+              {project.images.map((image: string, i: number) => (
+                <div
+                  key={i}
+                  className="rounded-md overflow-hidden border border-[#181818] shrink-0"
+                  style={{ maxHeight: "260px", maxWidth: "100%" }}
+                >
+                  <img
+                    src={image}
+                    alt={`${project.title} screenshot ${i + 1}`}
+                    className="h-full w-auto max-h-65 max-w-full object-contain hover:scale-120 transition-all duration-300 block"
                   />
-                ))}
-              </ul>
+                </div>
+              ))}
             </div>
+          )}
 
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-(--color-name) border-b border-gray-700 pb-2">
-                {t("projectsContent.technologiesTitle")}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {project.stack.map((tech: string) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-gray-900 border border-gray-700 rounded-md text-sm text-gray-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-[10px] tracking-[.14em] text-green-400">
+              {t("projectsContent.keyPointsTitle").toUpperCase()}
+            </span>
+            <div className="flex-1 h-px bg-green-400" />
+          </div>
 
-            <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-gray-800">
-              {project.siteUrl && (
-                <a
-                  href={project.siteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+          <ul className="mb-6 space-y-0">
+            {project.keyPoints.map((point: string, i: number) => (
+              <li
+                key={i}
+                className="flex items-baseline gap-2.5 md:text-[16px] text-[14px] text-(--gray) leading-[1.75] py-2 border-b border-[#111] last:border-b-0"
+              >
+                <span className="text-green-400/45 text-[13px] shrink-0">
+                  ›
+                </span>
+                <span dangerouslySetInnerHTML={{ __html: point }} />
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-[10px] tracking-[.14em] text-green-400">
+              {t("projectsContent.technologiesTitle").toUpperCase()}
+            </span>
+            <div className="flex-1 h-px bg-green-400" />
+          </div>
+
+          <div className="flex flex-wrap gap-1.5 mb-6">
+            {project.stack.map((tech: string) => (
+              <span
+                key={tech}
+                className="md:text-[16px] text-[14px] px-2 py-0.5 bg-[#0f0f0f] border border-[#1e1e1e] rounded-sm text-(--gray) tracking-[.06em]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2.5 pt-5 border-t border-[#141414]">
+            {project.siteUrl && (
+              <a
+                href={project.siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-[14px] tracking-widest px-4 py-2 rounded bg-green-400/8 border border-green-400/20 text-green-400/70 hover:bg-green-400/13 hover:border-green-400/35 transition-all duration-200"
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <Button title={t("projectsContent.visitSite")} />
-                </a>
-              )}
-              {project.sourceCodeUrl && (
-                <a
-                  href={project.sourceCodeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  <path d="M1 9L9 1M9 1H5M9 1V5" />
+                </svg>
+                {t("projectsContent.visitSite").toUpperCase()}
+              </a>
+            )}
+            {project.sourceCodeUrl && (
+              <a
+                href={project.sourceCodeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-[14px] tracking-widest px-4 py-2 rounded bg-transparent border border-[#202020] text-(--gray) hover:border-[#2e2e2e] transition-all duration-200"
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <Button title={t("projectsContent.sourceCode")} />
-                </a>
-              )}
-            </div>
+                  <path d="M3 1H1v8h8V7M6 1h3v3M4 6l5-5" />
+                </svg>
+                {t("projectsContent.sourceCode").toUpperCase()}
+              </a>
+            )}
           </div>
         </div>
       </div>

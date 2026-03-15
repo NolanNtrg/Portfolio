@@ -181,7 +181,12 @@
           "Centralization of administrative records and emergency contacts accessible in one click"
         ],
         "siteUrl": "https://www.entoutage.fr",
-        "images": ["/Entourage/creation.png", "Entourage/agenda.png"]
+        "images": [
+          "Entourage/courses.png",
+          "Entourage/agendaPC.png",
+          "/Entourage/creation.png",
+          "Entourage/agenda.png"
+        ]
       },
       "3": {
         "title": "Network Infrastructure",

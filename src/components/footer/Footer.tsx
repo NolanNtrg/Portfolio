@@ -8,8 +8,8 @@ export function Footer() {
         &copy; {new Date().getFullYear()} {t("footer.copyright")}
       </p>
       <p>
-        {t("footer.update")} {new Date().getDay()}/{new Date().getMonth() + 1}/
-        {new Date().getFullYear()}
+        {t("footer.update")} {new Date().getDay() + 1}/
+        {new Date().getMonth() + 1}/{new Date().getFullYear()}
       </p>
     </footer>
   );

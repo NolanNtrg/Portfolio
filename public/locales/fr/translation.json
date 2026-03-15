@@ -171,7 +171,7 @@
       "2": {
         "title": "Entour'Âge",
         "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
-        "description": "Conception et développement d'une application web visant à soulager la charge de travail des aidants familiaux",
+        "description": "Conception d'une application web visant à soulager la charge de travail des aidants familiaux",
         "image": "/Entourage/Entourage.png",
         "longDescription": "Entour'Âge est une plateforme collaborative dédiée à la coordination du cercle de soins autour d'une personne dépendante. L'application permet de centraliser les informations essentielles, d'organiser les interventions quotidiennes et de faciliter la communication entre les membres de la famille et les professionnels de santé. En structurant le suivi médical et logistique, l'outil vise à réduire significativement la charge mentale de l'aidant principal tout en sécurisant le maintien à domicile.",
         "keyPoints": [
@@ -181,7 +181,12 @@
           "Centralisation des dossiers administratifs et des contacts d'urgence accessibles en un clic"
         ],
         "siteUrl": "https://www.entoutage.fr",
-        "images": ["/Entourage/creation.png", "Entourage/agenda.png"]
+        "images": [
+          "Entourage/courses.png",
+          "Entourage/agendaPC.png",
+          "/Entourage/creation.png",
+          "Entourage/agenda.png"
+        ]
       },
       "3": {
         "title": "Infrastructure réseau",
@@ -199,7 +204,7 @@
       "4": {
         "title": "Messagerie en ligne",
         "stack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
-        "description": "Développement d'une application de messagerie instantanée minimaliste permettant des échanges en temps réel",
+        "description": "Développement d'une application de messagerie instantanée minimaliste",
         "image": "/Messagerie/flask.png",
         "longDescription": "Projet personnel conçu pour explorer le développement d'applications web dynamiques avec le framework Flask et lew websockets. L'application propose une interface simple et intuitive où les utilisateurs peuvent rejoindre des salons de discussion (chatrooms) pour échanger instantanément. Le projet comporte une gestion des sessions utilisateurs dans une architecture légère pour un déploiement rapide.",
         "keyPoints": [
@@ -213,7 +218,7 @@
       "5": {
         "title": "Plugins Minecraft",
         "stack": ["Java", "Spigot API", "Maven"],
-        "description": "Développement plugins pour serveurs multijoueurs",
+        "description": "Développement de plugins pour serveurs multijoueurs",
         "image": "/Plugins/plugins.jpg",
         "longDescription": "J'ai conçu et développé plusieurs plugins Java dans un cadre personnel pour enrichir l'expérience de jeu sur des serveurs Minecraft. Ce travail a impliqué l'utilisation de l'API Spigot/Paper pour manipuler la logique du jeu : création de commandes personnalisées, gestion d'événements complexes (listeners), et persistance des données.",
         "keyPoints": [
