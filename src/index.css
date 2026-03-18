@@ -27,6 +27,10 @@
   --green: var(--color-green-400);
 }
 
+body {
+  background-color: var(--background-color);
+}
+
 .fixed-bg {
   background-color: var(--background-color);
   background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px,
