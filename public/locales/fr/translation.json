@@ -38,7 +38,7 @@
       {
         "year": "2023 - 2024",
         "degree": "BUT Informatique - 1ère année",
-        "school": "IUT2 de Grenoble",
+        "school": "IUT2, Grenoble",
         "description": [
           "Fondamentaux de la programmation orientée objets (Java)",
           "Bases de données (SQL, PostgreSQL)",
@@ -151,7 +151,12 @@
     "projectsData": {
       "1": {
         "title": "BracketBuddy",
-        "stack": ["Java", "JavaFX", "HTML", "CSS"],
+        "stack": [
+          "Java",
+          "JavaFX",
+          "HTML",
+          "CSS"
+        ],
         "description": "Conception et développement d'une application lourde de création et de gestion de tournois de basket",
         "image": "/BracketBuddy/BracketBuddy.png",
         "longDescription": "BracketBuddy est une application lourde développée en équipe pour le projet de fin d'année de l'IUT2. Elle permet aux utilisateurs de créer et de gérer des tournois de basket. L'application dispose d'une interface conviviale pour créer des équipes, planifier des matchs, gérer les lieux et suivre la progression du tournoi avec une génération de l'arbre du tournoi en temps réel en fonction des scores.",
@@ -170,7 +175,14 @@
       },
       "2": {
         "title": "Entour'Âge",
-        "stack": ["SQL", "Python", "Flask", "HTML", "CSS", "JavaScript"],
+        "stack": [
+          "SQL",
+          "Python",
+          "Flask",
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
         "description": "Conception d'une application web visant à soulager la charge de travail des aidants familiaux",
         "image": "/Entourage/Entourage.png",
         "longDescription": "Entour'Âge est une plateforme collaborative dédiée à la coordination du cercle de soins autour d'une personne dépendante. L'application permet de centraliser les informations essentielles, d'organiser les interventions quotidiennes et de faciliter la communication entre les membres de la famille et les professionnels de santé. En structurant le suivi médical et logistique, l'outil vise à réduire significativement la charge mentale de l'aidant principal tout en sécurisant le maintien à domicile.",
@@ -190,7 +202,12 @@
       },
       "3": {
         "title": "Infrastructure réseau",
-        "stack": ["Proxmox", "Bash", "nftables", "SQL"],
+        "stack": [
+          "Proxmox",
+          "Bash",
+          "nftables",
+          "SQL"
+        ],
         "description": "Conception et mise en place d'une infrastructure réseau pour un service de régulation routière",
         "image": "/Infrastructure/lan.png",
         "longDescription": "Projet de groupe consistant à mettre en place une infrastructure complète pour un service de régulation du traffic (feux de signalisations). La sécurité de ce projet est un élément clé, qui nécessite la mise en place d'une communication interne sécurisée, de DMZ et d'un pare feu solide. L'infrastructure doit être complète : faire tourner de multiples machines clients/serveurs, des postes administrateurs, plusieurs réseaux et un wiki pour assurer la gestion future de l'infrastructure.",
@@ -203,7 +220,13 @@
       },
       "4": {
         "title": "Messagerie en ligne",
-        "stack": ["Python", "Flask", "HTML", "CSS", "JavaScript"],
+        "stack": [
+          "Python",
+          "Flask",
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
         "description": "Développement d'une application de messagerie instantanée minimaliste",
         "image": "/Messagerie/flask.png",
         "longDescription": "Projet personnel conçu pour explorer le développement d'applications web dynamiques avec le framework Flask et lew websockets. L'application propose une interface simple et intuitive où les utilisateurs peuvent rejoindre des salons de discussion (chatrooms) pour échanger instantanément. Le projet comporte une gestion des sessions utilisateurs dans une architecture légère pour un déploiement rapide.",
@@ -213,11 +236,18 @@
           "Architecture légère optimisée pour l'hébergement sur PythonAnywhere"
         ],
         "siteUrl": "https://nolanntrg.pythonanywhere.com",
-        "images": ["/Messagerie/enter.png", "/Messagerie/chatroom.png"]
+        "images": [
+          "/Messagerie/enter.png",
+          "/Messagerie/chatroom.png"
+        ]
       },
       "5": {
         "title": "Plugins Minecraft",
-        "stack": ["Java", "Spigot API", "Maven"],
+        "stack": [
+          "Java",
+          "Spigot API",
+          "Maven"
+        ],
         "description": "Développement de plugins pour serveurs multijoueurs",
         "image": "/Plugins/plugins.jpg",
         "longDescription": "J'ai conçu et développé plusieurs plugins Java dans un cadre personnel pour enrichir l'expérience de jeu sur des serveurs Minecraft. Ce travail a impliqué l'utilisation de l'API Spigot/Paper pour manipuler la logique du jeu : création de commandes personnalisées, gestion d'événements complexes (listeners), et persistance des données.",

@@ -15,13 +15,23 @@ export function ProjectsContent({
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    window.dispatchEvent(new CustomEvent("modalState", { detail: true }));
+
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && closeModal();
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "auto";
+      window.dispatchEvent(new CustomEvent("modalState", { detail: false }));
       window.removeEventListener("keydown", onKey);
     };
   }, [closeModal]);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLDivElement;
+    window.dispatchEvent(
+      new CustomEvent("modalScroll", { detail: target.scrollTop })
+    );
+  };
 
   const indexLabel = String(index != null ? index + 1 : 1).padStart(2, "0");
 
@@ -32,10 +42,10 @@ export function ProjectsContent({
         className="fixed inset-0 bg-black/82 backdrop-blur-sm"
       />
 
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-[95vw] max-w-5xl max-h-[88vh] flex flex-col bg-[#0a0a0a] border border-[#1e1e1e] rounded-xl overflow-hidden shadow-[0_0_0_1px_rgba(74,222,128,0.05),0_40px_80px_rgba(0,0,0,0.85)] font-(family-name:--font-ibm)">
+      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-[90vw] max-w-5xl max-h-[90vh] flex flex-col bg-[#0a0a0a] border border-[#1e1e1e] rounded-xl overflow-hidden shadow-[0_0_0_1px_rgba(74,222,128,0.05),0_40px_80px_rgba(0,0,0,0.85)] font-(family-name:--font-ibm)">
         <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-400/30 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex items-center justify-between px-5 h-11 border-b border-[#161616] bg-[#0d0d0d] shrink-0">
+        <div className="flex items-center justify-between px-4 h-10 border-b border-[#161616] bg-[#0d0d0d] shrink-0">
           <div className="flex items-center gap-3">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56] shadow-[0_0_4px_rgba(255,95,86,0.5)]" />
@@ -54,12 +64,12 @@ export function ProjectsContent({
           </button>
         </div>
 
-        <div className="overflow-y-auto flex-1 px-8 py-7">
+        <div className="overflow-y-auto flex-1 px-8 py-7" onScroll={handleScroll}>
           <div className="flex items-center gap-3 mb-3">
             <span className="text-[10px] tracking-[.14em] text-green-400">
               PROJECT {indexLabel}
             </span>
-            <div className="flex-1 h-px bg-green-400/40" />
+            <div className="flex-1 h-px bg-green-400" />
           </div>
 
           <h2 className="text-[24px] font-semibold text-[#ebebeb] tracking-tight mb-3">

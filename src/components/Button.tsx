@@ -9,6 +9,7 @@ type ButtonProps = {
   icon?: string;
   small?: boolean;
   onClick?: () => void;
+  forceWhite?: boolean;
 };
 
 export function Button({
@@ -20,17 +21,29 @@ export function Button({
   icon = "",
   small = false,
   onClick,
+  forceWhite = false,
 }: ButtonProps) {
-  const baseStyles = `
-    font-ibm font-semibold no-underline border-2 rounded-sm flex items-center gap-2 cursor-pointer
-    ${full ? "bg-(--background-color-items) text-(--color-text-contrasted) hover:bg-(--green) border-none" : "bg-transparent text-(--background-color-items) border-(--background-color-items) hover:text-(--color-text-contrasted) hover:bg-(--background-color-items)"}
-    ${small ? "px-2 py-1.5 text-xs" : "px-6 py-3 text-[0.9rem]"} 
-    transition-all duration-300 ease-in-out hover:-translate-y-0.75 hover:shadow-[0_5px_15px_rgba(0,0,0,0.1)]}   
-  `;
+  // Base structural classes independent of variant/size
+  const baseClasses = "flex items-center justify-center gap-2 font-(family-name:--font-ibm) font-medium tracking-wide transition-all duration-300 ease-out select-none active:scale-[0.98]";
+
+  // Size specific classes
+  const sizeClasses = small 
+    ? "px-3 py-1.5 text-xs rounded-md" 
+    : "px-6 py-3 text-sm rounded-lg";
+
+  // Outline text color: if forced to white (Navbar), use #e5e5e5 ALWAYS, otherwise adapt to theme.
+  const outlineTextColor = forceWhite ? "text-[#e5e5e5]" : "text-(--color-text)";
+
+  // Variant specific classes (Full vs Outline)
+  const variantClasses = full
+    ? "bg-white text-black hover:bg-green-400 hover:shadow-[0_0_20px_rgba(74,222,128,0.3)] hover:-translate-y-0.5" 
+    : `bg-transparent ${outlineTextColor} border border-[#333] hover:border-green-400/50 hover:text-green-500 hover:bg-green-400/5 hover:-translate-y-0.5`;
+
+  const combinedStyles = `${baseClasses} ${sizeClasses} ${variantClasses}`;
 
   if (href) {
     return (
-      <a href={href} download={download} className={baseStyles}>
+      <a href={href} download={download} className={combinedStyles}>
         {icon && <Icon src={icon} />}
         {title}
       </a>
@@ -40,7 +53,7 @@ export function Button({
   return (
     <button
       type={submit ? "submit" : "button"}
-      className={baseStyles}
+      className={combinedStyles}
       onClick={onClick}
     >
       {icon && <Icon src={icon} />}

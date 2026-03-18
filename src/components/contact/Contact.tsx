@@ -5,17 +5,19 @@ import { SocialMedia } from "./SocialMedia";
 export function Contact() {
   const { t } = useTranslation();
   return (
-    <section id="contact" className="bg-black text-white pt-10 pb-10">
-      <div className="w-full mx-auto text-center">
-        <div className="md:mb-10 contact">
-          <h2 className="text-4xl mb-3 text-(--term-text) font-bold">
+    <section id="contact" className="bg-[#080808] border-t border-[#141414] text-white pt-15 pb-15 relative overflow-hidden">
+      <div className="w-full md:max-w-none mx-auto px-4 md:px-0 relative">
+        <div className="mb-4 md:mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl text-[#ededed] mb-3 font-semibold tracking-tight">
             {t("contact.title")}
           </h2>
-          <p className="text-gray-400 font-mono text-base pr-3 pl-3">
+          <div className="w-40 md:w-60 h-px bg-green-400/50 mx-auto mb-4" />
+          <p className="text-(--gray) font-(family-name:--font-ibm) text-sm tracking-wider">
             {t("contact.subtitle")}
           </p>
         </div>
-        <div className="flex flex-row flex-wrap justify-center gap-[2vw]">
+
+        <div className="flex flex-col-reverse gap-10 md:flex-row md:justify-center items-start md:gap-[10vw]">
           <SocialMedia />
           <Mail />
         </div>

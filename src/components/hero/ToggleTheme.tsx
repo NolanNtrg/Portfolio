@@ -17,18 +17,29 @@ const ThemeToggle = () => {
   }, [isDarkTheme]);
 
   return (
-    <div className="flex items-center gap-2 text-(--color-text)">
-      <Icon src="/sun.svg" />
+    <div className="flex items-center gap-2 text-[#e5e5e5]">
+      <div className="opacity-70 scale-90">
+        <Icon src="/sun.svg" />
+      </div>
       <Switch
         checked={isDarkTheme}
         onChange={() => setDarkTheme(!isDarkTheme)}
-        className="cursor-pointer group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-checked:bg-(--green)"
+        className={`
+          group relative inline-flex h-5 w-9 items-center rounded-full transition-colors duration-300 ease-in-out cursor-pointer
+          ${isDarkTheme ? 'bg-green-400/80' : 'bg-[#333]'}
+        `}
         aria-label="Bouton de changement de thème du site : clair ou sombre."
-        aria-labelledby="theme-toggle"
       >
-        <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-checked:translate-x-6" />
+        <span 
+          className={`
+            size-3.5 rounded-full bg-white transition-transform duration-300 ease-in-out shadow-sm
+            ${isDarkTheme ? 'translate-x-4.5' : 'translate-x-0.5'}
+          `}
+        />
       </Switch>
-      <Icon src="/moon.svg" />
+      <div className="opacity-70 scale-90">
+        <Icon src="/moon.svg" />
+      </div>
     </div>
   );
 };

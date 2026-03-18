@@ -29,30 +29,12 @@
 
 .fixed-bg {
   background-color: var(--background-color);
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.055) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px);
   background-size: 28px 28px;
   background-position: 0 0;
   box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.75);
   isolation: isolate;
-}
-
-.terminal-scanlines::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.025) 2px,
-    rgba(0, 0, 0, 0.025) 4px
-  );
-  pointer-events: none;
-  z-index: 20;
-  border-radius: inherit;
 }
 
 #description::after {
@@ -66,10 +48,12 @@
 }
 
 @keyframes blink {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }

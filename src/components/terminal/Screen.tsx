@@ -137,7 +137,7 @@ export function Screen() {
         <div className="sticky top-0 h-screen w-full flex items-center justify-center p-2 md:p-4 overflow-hidden">
           <div
             id="terminal"
-            className="w-[95vw] h-[90dvh] md:w-[90vw] md:h-[90vh] rounded-xl flex flex-col relative overflow-hidden bg-[#080808] border border-[#1f1f1f]"
+            className="w-[90vw] h-[90vh] md:w-[90vw] md:h-[90vh] rounded-xl flex flex-col relative overflow-hidden bg-[#080808] border border-[#1f1f1f]"
           >
             <header className="h-10 border-b border-[#191919] flex items-center justify-between px-4 shrink-0 z-30 bg-[#0d0d0d] relative">
               <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-(--green)/60 to-transparent" />
@@ -167,21 +167,19 @@ export function Screen() {
             >
               {/* Phase texte */}
               <div
-                className={`absolute inset-0 p-5 md:p-6 transition-opacity duration-500 z-10 ${
-                  isTextFinished
-                    ? "opacity-0 pointer-events-none"
-                    : "opacity-100"
-                }`}
+                className={`absolute inset-0 p-5 md:p-6 transition-opacity duration-500 z-10 ${isTextFinished
+                  ? "opacity-0 pointer-events-none"
+                  : "opacity-100"
+                  }`}
               >
                 <div className="text-xs md:text-sm text-green-400 leading-relaxed">
                   {scenario.map((line, i) => (
                     <div
                       key={i}
-                      className={`transition-all duration-300 mb-1.5 ${
-                        i < visibleLines
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-2"
-                      }`}
+                      className={`transition-all duration-300 mb-1.5 ${i < visibleLines
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-2"
+                        }`}
                       dangerouslySetInnerHTML={{ __html: line }}
                     />
                   ))}
@@ -191,9 +189,8 @@ export function Screen() {
               {/* Phase projets */}
               <div
                 ref={projectsContainerRef}
-                className={`absolute left-0 w-full px-4 pb-10 transition-opacity duration-500 ${
-                  isTextFinished ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute left-0 w-full px-4 pb-10 transition-opacity duration-500 ${isTextFinished ? "opacity-100" : "opacity-0"
+                  }`}
                 style={{
                   top: "0",
                   transform: `translateY(-${projectsScrollProgress * maxTranslate}px)`,
