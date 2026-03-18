@@ -68,7 +68,7 @@ export function Navbar() {
     <>
       {/* Zone invisible pour détecter le hover tout en haut de l'écran (Desktop) */}
       <div
-        className="fixed top-0 left-1/2 -translate-x-1/2 w-[250px] h-16 z-[120]"
+        className="fixed top-0 left-1/2 -translate-x-1/2 w-[250px] h-[calc(4rem+env(safe-area-inset-top))] z-[120]"
         onPointerEnter={(e) => e.pointerType === 'mouse' && setIsHovered(true)}
         onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
       />
@@ -76,7 +76,7 @@ export function Navbar() {
       {/* Petit indicateur visuel (ligne verte) qui s'affiche quand la navbar est cachée */}
       <div
         className={`
-          fixed top-0 left-1/2 -translate-x-1/2 w-16 h-1 
+          fixed top-[env(safe-area-inset-top)] left-1/2 -translate-x-1/2 w-16 h-1 
           bg-green-400/50 rounded-b-md shadow-[0_0_10px_rgba(74,222,128,0.5)]
           transition-all duration-500 z-[120] pointer-events-none
           ${isVisible ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'}
@@ -86,7 +86,7 @@ export function Navbar() {
       {/* Navbar Container */}
       <div
         className={`
-          fixed top-4 left-1/2 -translate-x-1/2 z-[120] flex items-center justify-center gap-3 
+          fixed top-[calc(1rem+env(safe-area-inset-top))] left-1/2 -translate-x-1/2 z-[120] flex items-center justify-center gap-3 
           px-4 py-2.5 rounded-full bg-[#111]/70 backdrop-blur-md border border-[#333]/50 
           shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
           ${isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-24 opacity-0 scale-95 pointer-events-none'}
